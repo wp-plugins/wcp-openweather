@@ -86,6 +86,7 @@ If you need to add multiple weather forecasts please use shordcode **[wcp_weathe
 `[wcp_weather id="my weather-1" city="London,GB"]`
 
 Full list of parameters that avialable for shortcode:
+
 * **id** - unique name;
 * **city** - city name, as sample "London,GB"
 * **tempUnit** - temperature unit (c --> °C, f --> °F,) 
