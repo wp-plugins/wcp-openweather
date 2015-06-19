@@ -1,0 +1,41 @@
+<?php
+return array(
+    'temp' => array(
+        'c' => "&deg;C",
+        'f' => "&deg;F",
+    ),
+    'windSpeed' => array(
+        'mph' => 'mph',
+        'kmh' => 'km/h',
+        'ms' => 'm/s',
+//        'beaufort' => 'Beaufort',
+        'Knots' => 'Knots',
+    ),
+    'pressure' => array(
+        'atm' => 'atm',
+        'bar' => 'bar',
+        'hPa' => 'hPa',
+        'kgfcm2' => 'kgf/cm²',
+        'kgfm2' => 'kgf/m²',
+        'kPa' => 'kPa',
+        'mbar' => 'mbar',
+        'mmHg' => 'mmHg',
+        'inHg' => 'inHg',
+        'Pa' => 'Pa',
+        'psf' => 'psf',
+        'psi' => 'psi',
+        'torr' => 'torr',
+    ),
+    'refreshPeriod' => array (
+        '0' => 'Always',
+        '1800' => '0.5h - Not Recommended',
+        '3600' => '1h - Recommended',
+        '7200' => '2h',        
+        '10800' => '3h',
+        '21600' => '6h',
+        '32400' => '9h',
+        '43200' => '12h',
+        '86400' => '24h',
+    ),
+    'theme' => array('RPw_Settings', 'getThemesFieldSet'),
+);
