@@ -44,8 +44,8 @@ That is all. Widget with weather forecast will be displayed at the choosed sideb
 = Quick weather forecast setup as shortcode =
 
 1. Check plugin "Settings" and plugin "Theme Settings" pages and customize weather forecast options for your purposes;
-3. Create new page or use existed;
-2. Add shordcode - **[wcp_weather]** - to the TinyMCE editor and save the page for city from default plugin settings.
+2. Create new page or use existed;
+3. Add shordcode - **[wcp_weather]** - to the TinyMCE editor and save the page. City value will be used from the default plugin settings.
 
 That is all. Weather forecast will be displayed on your site page.
 
