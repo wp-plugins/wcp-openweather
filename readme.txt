@@ -21,7 +21,7 @@ We represent you the newest weather forecast plugin based on [OpenWeatherMap API
 * Default plugin options and personal widgets/shortcodes options for site administrator;
 * Optional possibility to allow user options for weather forecast on the site frontend;
 * Plugin themes support;
-* Possibility to use OpenWeatherMap API key for [paid planes](http://openweathermap.org/price/);
+* Possibility to use OpenWeatherMap API key for [free and paid plans](http://openweathermap.org/price/);
 * City name with Google Map Place Autocomplete.
 
 = Default Theme Features =
