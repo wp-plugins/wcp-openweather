@@ -132,6 +132,10 @@ To change weather forecast background and font colors go to the menu "WCP Weathe
 11. Admin Panel :: Theme Settings
 
 == Changelog ==
+= 1.0.1 =
+* Changed: layout of the "Settings" page
+* Added: Link to live demo site in description of the plugin
+* Minor changes of the plugin core
 
 = 1.0.0 =
 * Initial release.
