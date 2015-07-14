@@ -63,8 +63,9 @@ class RPw_Settings extends Agp_SettingsAbstract {
         $this->userOptions = RPw_UserOptions::instance();
         
         $config = include ($this->getParentModule()->getBaseDir() . '/config/config.php');        
-        
-        parent::__construct($config);
+
+        parent::__construct($config);                
+
     }
     
     public static function renderSettingsPage() {
@@ -99,42 +100,44 @@ class RPw_Settings extends Agp_SettingsAbstract {
         return $result;        
     }        
     
+    public static function getLanguages() {
+        $languages = self::$_instance->getFieldSet('languages');
+        asort($languages);
+        $result = array('' => __('Auto Detect', 'wcp-openweather')) + $languages; 
+        return $result;        
+    }            
+    
     public static function getParentModule() {
        
         return self::$_parentModule;
     }
     
     /**
-     * Gets saved or default options
-     * 
-     * @return array
+     * Create menu
      */
-    public function getOptions() {
-        $fields = $this->getFields();        
-        
-        $result = array();
-        if ($this->getTabs()) {        
-            foreach ($this->getTabs() as $k => $v) {
-                if (!empty($fields[$k])) {
-                    $options = get_option( $k );                    
-                    foreach ($fields[$k]['fields'] as $dk => $dv) {
-                        if (!empty($options)) {
-                            if ( isset( $options[$dk] ) ) {
-                                $result[$k][$dk] = $options[$dk];                                
-                            } elseif ($dv['type'] !== 'checkbox' && isset ( $dv['default'])) {
-                                $result[$k][$dk] = $dv['default'];
-                            }
-                        } else {
-                            if ( isset ( $dv['default'] ) ) {
-                                $result[$k][$dk] = $dv['default'];
-                            }                               
-                        }
-                    }                    
+    public function adminMenu() {
+        if (!empty($this->getConfig()->admin->menu)) {
+            foreach ($this->getConfig()->admin->menu as $menu_slug => $page) {
+
+                $page->page_title = __($page->page_title, 'wcp-openweather');
+                $page->menu_title = __($page->menu_title, 'wcp-openweather');
+                
+                add_menu_page( $page->page_title, $page->menu_title, $page->capability, $menu_slug, $page->function, $page->icon_url, $page->position);
+                
+                if (!empty($page->submenu)) {
+                    foreach ($page->submenu as $submenu_slug => $subpage) {                    
+                        $subpage->page_title = __($subpage->page_title, 'wcp-openweather');
+                        $subpage->menu_title = __($subpage->menu_title, 'wcp-openweather');
+                        add_submenu_page( $menu_slug, $subpage->page_title, $subpage->menu_title, $subpage->capability, $submenu_slug, $subpage->function );
+                    }
                 }
-            }    
-        } 
-        return $this->getRecursiveCallable( $result );
-    }    
+
+                if (!empty($page->hideInSubMenu)) {
+                    remove_submenu_page( $menu_slug, $menu_slug );            
+                }                
+            }
+        }
+    }
     
     /**
      * Sanitize settings
@@ -160,6 +163,7 @@ class RPw_Settings extends Agp_SettingsAbstract {
             }            
             
             $result['enableusersettings'] = 'enableUserSettings';
+            $result['hideweatherconditions'] = 'hideWeatherConditions';
         }
 
         return $result;
@@ -207,7 +211,43 @@ class RPw_Settings extends Agp_SettingsAbstract {
         return $result;        
     }
     
+    
+    /**
+     * Recursive callable apply 
+     * 
+     * @param mix $value
+     * @return mix
+     */
+    public function getRecursiveCallable ($value) {
+        $result = $value;
+        if (is_callable($value) && is_array($value)) {
+            $result =  call_user_func($value);
+        } elseif (is_array($value)) {
+            foreach ($value as $k => $v) {
+                $result[$k] = $this->getRecursiveCallable($v);        
+            }
+        }         
+        return $result;
+    }      
 
+    /**
+     * Page getter
+     * 
+     * @return string
+     */
+    public function getPage() {
+        return $this->getRecursiveCallable(parent::getPage());
+    }
+    
+    /**
+     * Tabs getter
+     * 
+     * @return array
+     */
+    public function getTabs() {
+        return $this->getRecursiveCallable(parent::getTabs());
+    }
+    
     public function getUserOptions() {
         return $this->userOptions;
     }
@@ -241,7 +281,6 @@ class RPw_Settings extends Agp_SettingsAbstract {
         $this->currentTag = $currentTag;
         return $this;
     }
-
 
 }
 

@@ -18,6 +18,7 @@
         <div class="wcp-openweather-container">
             <?php 
                 foreach ($data->getAll() as $key => $item) :
+                    $item->hideWeatherConditions = $data->hideWeatherConditions;
                     echo RPw_Theme::instance()->getTemplate('widget/wcp_weather_widget/forecast-item', $item);  
                 endforeach;
             ?>

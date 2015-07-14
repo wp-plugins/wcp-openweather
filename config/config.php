@@ -6,7 +6,7 @@ return array(
     ),
     'inline_theme' => array(
         'Webcodin\WCPOpenWeather\Theme\DefaultTheme' => '/theme/default/wcp-open-weather-theme.php',
-        'Webcodin\WCPOpenWeather\Theme\MetroTheme' => '/theme/metro/wcp-open-weather-theme.php',
+        //'Webcodin\WCPOpenWeather\Theme\MetroTheme' => '/theme/metro/wcp-open-weather-theme.php',
     ),
 );
 

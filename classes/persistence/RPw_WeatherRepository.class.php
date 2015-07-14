@@ -5,6 +5,11 @@ class RPw_WeatherRepository extends Agp_RepositoryAbstract {
 
     public $entityClass = 'RPw_WeatherEntity';    
     
+    /**
+     * City
+     * 
+     * @var RPw_CityEntity
+     */
     private $city;
     
     public function __construct($data = NULL) {
@@ -16,6 +21,11 @@ class RPw_WeatherRepository extends Agp_RepositoryAbstract {
         
     }    
     
+    /**
+     * City
+     * 
+     * @return RPw_CityEntity
+     */
     public function getCity() {
         return $this->city;
     }

@@ -12,7 +12,7 @@ if (!empty($args->fields)):
         ?>
             <div class="wcp-openweather-settings-section wp-open-weather-section<?php echo !empty($sv['class']) ? ' '.$sv['class'] : '';?>">
                 <?php if (!empty($sv['label'])) : ?>        
-                    <span class="wcp-openweather-settings-section-title"><?php echo $sv['label'] ?></span>
+                    <span class="wcp-openweather-settings-section-title"><?php echo __( $sv['label'] , 'wcp-openweather'); ?></span>
                 <?php endif; ?>                
                 <?php        
                     foreach ($fields as $fk => $fv) :

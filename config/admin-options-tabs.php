@@ -1,12 +1,12 @@
 <?php
 return array(
     'global-settings' => array(
-        'title' => 'Weather',
+        'title' => __('Weather', 'wcp-openweather'),
     ),
     'plugin-settings' => array(
-        'title' => 'Plugin',
+        'title' => __('Plugin', 'wcp-openweather'),
     ),
     'api-settings' => array(
-        'title' => 'API',
+        'title' => __('API', 'wcp-openweather'),
     ),    
 );

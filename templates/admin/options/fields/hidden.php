@@ -13,6 +13,9 @@
     }
     
     $value = esc_attr($args->data[$args->field]);
+    
+    $label = __( $label, 'wcp-openweather' );
+    $note = __( $note, 'wcp-openweather' );    
 ?>
 <tr>
     <input <?php echo $atts;?><?php echo !empty($class) ? ' class="'.$class.'"': '';?> type="hidden" id="<?php echo "{$args->key}[{$args->field}]"; ?>" name="<?php echo "{$args->key}[{$args->field}]"; ?>" value="<?php echo $value;?>">                

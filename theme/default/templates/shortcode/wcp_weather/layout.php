@@ -10,10 +10,12 @@
 
     $hasData = !empty($weather) || !empty($forecast);
     
+    
+    
     if (!empty($weather)) {
-        $city = $weather->getCity()->getName().', '.$weather->getCity()->getCountry();
+        $city = $weather->getCity()->getDisplayName();
     } elseif (!empty($forecast)) {
-        $city = $forecast->getCity()->getName().', '.$forecast->getCity()->getCountry();
+        $city = $forecast->getCity()->getDisplayName();
     } else {
         $city = $settings['city'];
     }
@@ -25,7 +27,7 @@
     $color = isset($settings['themeOptions']['text_color']) ? $settings['themeOptions']['text_color'] : NULL;
     $secondary_color = isset($settings['themeOptions']['secondary_text_color']) ? $settings['themeOptions']['secondary_text_color'] : NULL;
     
-    $currentDate = date( 'M j, Y - D') ;
+    $currentDate = RPw()->getDate( '%b %e, %Y - %a' ) ;
     
 ?>
 <style>
@@ -72,6 +74,7 @@
                     </td>   
                     <?php 
                         if ( !empty($weather) ) :
+                            $weather->hideWeatherConditions = $settings['hideWeatherConditions'];
                             echo RPw_Theme::instance()->getTemplate("shortcode/wcp_weather/now", $weather);
                         endif;
                     ?>  
@@ -82,6 +85,7 @@
         
         <?php 
             if (!empty($forecast)) :
+                $forecast->hideWeatherConditions = $settings['hideWeatherConditions'];
                 echo RPw_Theme::instance()->getTemplate("shortcode/wcp_weather/forecast", $forecast);
             endif;                
         ?>

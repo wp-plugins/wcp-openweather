@@ -11,18 +11,27 @@ The weather forecast plugin based on OpenWeatherMap API that includes various si
 
 == Description ==
 
-We represent you the newest weather forecast plugin based on [OpenWeatherMap API](http://openweathermap.org/). Our plugin allows to add weather forecasts with using widgets and shortcodes on your site.
+WCP OpenWeather plugin allows you to add various widgets and shortcodes with current weather or forecast for your city. 
+Our plugin is based on free [OpenWeatherMap API](http://openweathermap.org/) and uses free API key for weather data receiving with limitation for this plan, but you can buy any key for [paid plans](http://openweathermap.org/price/) and use it for your purposes.
+In additional, plugin supports different themes, but currently is available only one default theme. We are working on creation of new themes for widgets/shortcodes, so it will be added soon. With default theme you are able to customize background/text colors for widgets/shortcodes.
+
+Live demo you can find [here](http://wpdemo.webcodin.com/weather-forecast/).
+
+= Latest Updates =
+* Multilanguage functionality (limited languages list – will be improved soon);
+* TinyMCE toolbar button for shortcode with visual settings.
 
 = Plugin Features =
 
-* You can add weather forecast with using widgets in sidebar or stortcode for a page;
-* Weather forecast provided by OpenWeatherMap API;
+* Current weather and forecast widgets for sidebars and shortcode for page;
+* Weather forecast provided by FREE OpenWeatherMap API;
 * Conversion measurements and settings for temperature, wind and pressure;
 * Default plugin options and personal widgets/shortcodes options for site administrator;
-* Optional possibility to allow user options for weather forecast on the site frontend;
+* Optional widget/shortcode user options for weather forecast on the site frontend for site visitors;
 * Plugin themes support;
-* Possibility to use OpenWeatherMap API key for [free and paid plans](http://openweathermap.org/price/);
-* City name with Google Map Place Autocomplete.
+* Possibility to use OpenWeatherMap API key for free and [paid plans](http://openweathermap.org/price/);
+* City name with Google Map Place Autocomplete;
+* Full adaptive translation of the plugin interface including the name of the city.
 
 = Default Theme Features =
 
@@ -30,33 +39,30 @@ We represent you the newest weather forecast plugin based on [OpenWeatherMap API
 * Shortcode with parameters for pages;
 * Customization of background and text colors;
 
-[Live Demo](http://wpdemo.webcodin.com/weather-forecast/)
 
-= Quick weather forecast setup as widget =
+= Multilanguage Functionality =
 
-1. Check plugin "Settings" and plugin "Theme Settings" pages and customize weather forecast options for your purposes;
-2. Go to the "Appearance" --> "Widgets" sections;
-3. Add "WCP Weather" or "WCP Weather Mini" widget to necessary sidebar;
-4. Choose city name in the widget options, customize other options for your purposes and press "Save" button. 
+Currently, we are working on the plugin multilanguage functionality. In this plugin realize we added support for following list of the languages:
 
-That is all. Widget with weather forecast will be displayed at the choosed sidebar.
+* English (default);
+* Russian;
+* Ukrainian.
 
-= Quick weather forecast setup as shortcode =
+Multilanguage functionality has limitation based on [OpenWeatherMap API](http://openweathermap.org/forecast16#multi) languages support, i.e. city name has no translation for city name by default and description of weather conditions have translation only for languages form [OpenWeatherMap](http://openweathermap.org/forecast16#multi) API list.
 
-1. Check plugin "Settings" and plugin "Theme Settings" pages and customize weather forecast options for your purposes;
-2. Create new page or use existed;
-3. Add shordcode - **[wcp_weather]** - to the TinyMCE editor and save the page. City value will be used from the default plugin settings.
+Currently, translation of the city names realized via Google autocomplete for city name based on active language for the plugin. 
 
-That is all. Weather forecast will be displayed on your site page.
+If you want to help with plugin translation on your language please let us know via demo site [contact form](http://wpdemo.webcodin.com/stay-in-touch/) or directly via support@webcodin.com. We will send you .xlsx or .po file with necessary variables for translations.
 
-**NB!** If you need to add several shortcodes on a page, you will need to use following shortcode parameters, as sample **[wcp_weather id="my-weather-1" city="London,GB"]** and **[wcp_weather id="my-weather-2" city="San Francisco,US"]**
+**NB!** Translation of the city name to the active language occurs when you choose city from the Google Autocomplete list. When You change the current language then city name in the existing shortcodes and widgets will not be automatically translated to the new language. To do this, select the city again, and save the changes.
 
 More information and documentation can be found in the section [screenshots](https://wordpress.org/plugins/wcp-openweather/screenshots/) and [FAQ](https://wordpress.org/plugins/wcp-openweather/faq/).
 
 = Notes =
 
+* **NB!** Minimum required **PHP version** is **5.3.0**.
 * **NB!** We use cookies to storage user options; 
-* **NB!** Free OpenWeatherMap has [limitation to API request](http://openweathermap.org/price/) per hour.
+* **NB!** Free OpenWeatherMap has [limitation to API request](http://openweathermap.org/price/).
 
 == Installation ==
 
@@ -64,59 +70,93 @@ More information and documentation can be found in the section [screenshots](htt
 2. Unzip and Upload 'wcp-openweather' to a sub directory in '/wp-content/plugins/'.
 3. Activate the plugins through the 'Plugins' menu in WordPress.
 
+= Quick current weather/forecast setup as widget =
+* Check plugin "WCP OpenWeather" > "Settings" and plugin "WCP OpenWeather" > "Theme Settings" pages and customize weather forecast options for your purposes;
+* Go to the "Appearance" –> "Widgets" sections;
+* Add "WCP Weather" or "WCP Weather Mini" widget to necessary sidebar;
+* Choose city name in the widget options, customize other options for your purposes and press "Save" button.
+
+That is all. Widget with weather forecast will be displayed at the chosen sidebar.
+
+= Quick current weather/forecast setup as shortcode =
+* Check plugin "WCP OpenWeather" > "Settings" and plugin "WCP OpenWeather" > "Theme Settings" pages and customize weather forecast options for your purposes;
+* Create new page or use existed ("Pages" > "All Pages"/"Add New");
+* Add shortcode via TinyMCE toolbar button with necessary options and save the page.
+
+That is all. Weather forecast will be displayed on the page of your site.
+
+
 == Frequently Asked Questions ==
 
-= How can I add weather forecast to a page =
+= Why I have "Parse error: syntax error, unexpected T_STRING, expecting T_CONSTANT_ENCAPSED_STRING" error after the plugin installation. =
+If you have following error "Parse error: syntax error, unexpected T_STRING, expecting T_CONSTANT_ENCAPSED_STRING" after the plugin installation, please check PHP version on your server. Minimum required **PHP version** – **5.3.0**.
 
-To create a new page for the weather forecast, go to the menu "Pages" > "Add New". 
-After filling all needed fields, please add to the TinyMCE of the page next shortcode and save the page: 
+= Why I have "Bad Request. Your browser sent a request that this server could not understand. Size of a request header field exceeds server limit. Cookie" error? =
+If you have following error "Bad Request. Your browser sent a request that this server could not understand. Size of a request header field exceeds server limit. Cookie" after the adding new widget or shortcode, please clear cookies for Your site in the browser.
 
-`[wcp_weather]`
+= How can I add current weather/forecast to a sidebar? =
+* Check plugin "WCP OpenWeather" > "Settings" and plugin "WCP OpenWeather" > "Theme Settings" pages and customize weather forecast options for your purposes;
+* Go to the "Appearance" –> "Widgets" sections;
+* Add "WCP Weather" or "WCP Weather Mini" widget to necessary sidebar;
+* Choose city name in the widget options, customize other options for your purposes and press "Save" button.
+	
+More information can be found in the section [screenshots](https://wordpress.org/plugins/wcp-openweather/screenshots/).
 
-As a result, weather forecast will appear on page based on default settings.
+= How can I add current weather/forecast to a page? = 
+* Check plugin "WCP OpenWeather" > "Settings" and plugin "WCP OpenWeather" > "Theme Settings" pages and customize weather forecast options for your purposes;
+* Create new page or use existed ("Pages" > "All Pages"/"Add New");
+* Add shortcode via TinyMCE toolbar button with necessary options and save the page.
+		
+More information can be found in the section [screenshots](https://wordpress.org/plugins/wcp-openweather/screenshots/).
 
-The weather forecast can be also added to an existing page. To do this, go to the menu "Pages" > "All Pages". Open for editing the necessary page and insert shortcode in the right place in TinyMCE and save the page. 
+= How can I add/edit shortcode manually? = 
+* Check plugin "Settings" and plugin "Theme Settings" pages and customize weather forecast options for your purposes;
+* Create new page or use existed;
+* Add shortcode – `[wcp_weather]` – to the TinyMCE editor and save the page. All values (location, measurement units etc.) will be used from the default plugin settings.
 
-If you need to add multiple weather forecasts please use shordcode **[wcp_weather]** with unique ID and city name parameters
-
-**Shortcode examples**
-
-`[wcp_weather]`
-
-`[wcp_weather id="my weather-1" city="London,GB"]`
-
-Full list of parameters that avialable for shortcode:
-
-* **id** - unique name;
-* **city** - city name, as sample "London,GB"
-* **tempUnit** - temperature unit (c --> °C, f --> °F,) 
-* **windSpeedUnit** - wind speed unit (mphc --> mph, kmh --> km/h, msc --> m/s, Knots --> Knots)
-* **pressureUnit** - pressure unit (atm --> atm, bar --> bar, hPa --> hPa, kgfcm2 --> kgf/cm2, kgfm2 --> kgf/m2', kPa --> kPa, mbar --> mbar, mmHg --> mmHg, inHg --> inHg, Pa --> Pa, psf --> psf, psi --> psi, torr --> torr)
-* **showCurrentWeather** - show current weather (1/0)
-* **showForecastWeather** - show 5 day forecast (1/0)
-
-**Shortcode examples**
-
-`[wcp_weather id="my weather-1" city="London,GB" tempUnit="f" windSpeedUnit="mph" pressureUnit="mmHg" showCurrentWeather="1" showForecastWeather="1"]`
+**NB!** If you need to add several shortcodes on a page, you will need to use following shortcode parameters, as sample `[wcp_weather id="my-weather-1" city="London, GB"]` and `[wcp_weather id="my-weather-2" city="San Francisco, US"]`.
 
 More information can be found in the section [screenshots](https://wordpress.org/plugins/wcp-openweather/screenshots/).
 
-= How can I add weather forecast to a sidebar =
+= Where can I change plugin language? =
+You can change plugin language here: "WCP OpenWeather" > "Settings" > "Plugin" tab > "Language" dropdown.
+If you want to help with plugin translation on your language please let us know via demo site [contact form](http://wpdemo.webcodin.com/stay-in-touch/) or directly via support@webcodin.com. We will send you .xlsx or .po file with necessary variables for translations.
+	
+More information can be found in the section [screenshots](https://wordpress.org/plugins/wcp-openweather/screenshots/).
 
-Go to the "Appearance" --> "Widgets" sections.
-Add "WCP Weather" or "WCP Weather Mini" widget to necessary sidebar, change sidebar title and other options if you need and press "Save" button.
+= Where can I change plugin theme? =
+You can change plugin theme here: "WCP OpenWeather" > "Settings" > "Plugin" tab > "Active Theme" dropdown.
+Currently is available only one default theme. We are working on creation of new themes for widgets/shortcodes, so it will be added soon.
+	
+More information can be found in the section [screenshots](https://wordpress.org/plugins/wcp-openweather/screenshots/).
+
+= Where can I change background and text color for default theme? =
+You can change default theme background text and color here: "WCP OpenWeather" > "Theme Settings".
+	
+More information can be found in the section [screenshots](https://wordpress.org/plugins/wcp-openweather/screenshots/).
+
+= Where can I find default weather options? =
+Default weather options you can find "WCP OpenWeather" > "Settings" > "Weather" tab.
+On this page you are able to set:
+* **Location** – allows to set default location name;
+* **Measurement Units** – allows to set units for temperature, wind speed and pressure;
+* **Display Options** – allows to set current weather/5 days forecast
 
 More information can be found in the section [screenshots](https://wordpress.org/plugins/wcp-openweather/screenshots/).
 
-= How can I configure weather forecast default settings =
+= Where can I find default plugin options? =
+Default weather options you can find "WCP OpenWeather" > "Settings" > "Plugin" tab.
+On this page you are able to set:
+* **General Options** – allows to set language, active theme and default weather refresh time;
+* **User Options** – allows to enable/disable user option for site visitors on the site frontend and set storage time of the user options data in cookies;
+* **Other** - allows to disable weather conditions description (can be used if active language does not support weather conditions translations) and change “no data” message.
+	
+More information can be found in the section [screenshots](https://wordpress.org/plugins/wcp-openweather/screenshots/).
 
-To change default weather forecast configuration go to the menu "WCP Weather" > "Settings".
+= Where can I add own API key? =
+You can add own OpenWeatherMap API key here: "WCP OpenWeather" > "Settings" > "API" tab.
 
-= How can I change weather forecast background and font colors =
-
-To change weather forecast background and font colors go to the menu "WCP Weather" > "Theme Settings".
-
-**More extended documentation will be added soon**
+More information can be found in the section [screenshots](https://wordpress.org/plugins/wcp-openweather/screenshots/).
 
 == Screenshots ==
 1. Current Weather and Forecast Samples
@@ -124,17 +164,27 @@ To change weather forecast background and font colors go to the menu "WCP Weathe
 3. Current Weather and Forecast Samples :: Mobile Version
 4. Current Weather and Forecast Samples :: Mobile Version
 5. User Options
-6. Shordcode
-7. Widget
-8. Admin Panel :: Settings :: Weather Tab
-9. Admin Panel :: Settings :: Plugin Tab
-10. Admin Panel :: Settings :: API Tab
-11. Admin Panel :: Theme Settings
+6. TinyMCE actionbar Button
+7. Shordcode Generator
+8. Widget
+9. Admin Panel :: Settings :: Weather Tab
+10. Admin Panel :: Settings :: Plugin Tab
+11. Admin Panel :: Settings :: API Tab
+12. Admin Panel :: Theme Settings
 
 == Changelog ==
+= 1.1.0 =
+* Added: multilanguage support
+* Added: visual shortcode generator for TinyMCE editor
+* Added: additional parameters of the plugin settings
+* Changed: display rules for some visual elements
+* Minor changes in the style of the default theme
+* Minor changes of the plugin core
+* Documentation update
+
 = 1.0.1 =
 * Changed: layout of the "Settings" page
-* Added: Link to live demo site in description of the plugin
+* Added: link to live demo site in description of the plugin
 * Minor changes of the plugin core
 
 = 1.0.0 =

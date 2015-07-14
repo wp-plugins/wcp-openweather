@@ -43,36 +43,40 @@ class RPw_ThemeSettings extends Agp_SettingsAbstract {
     }
     
     /**
-     * Gets saved or default options
+     * Recursive callable apply 
+     * 
+     * @param mix $value
+     * @return mix
+     */
+    public function getRecursiveCallable ($value) {
+        $result = $value;
+        if (is_callable($value) && is_array($value)) {
+            $result =  call_user_func($value);
+        } elseif (is_array($value)) {
+            foreach ($value as $k => $v) {
+                $result[$k] = $this->getRecursiveCallable($v);
+            }
+        } 
+        return $result;
+    }        
+    
+    /**
+     * Page getter
+     * 
+     * @return string
+     */
+    public function getPage() {
+        return $this->getRecursiveCallable(parent::getPage());
+    }
+    
+    /**
+     * Tabs getter
      * 
      * @return array
      */
-    public function getOptions() {
-        $fields = $this->getFields();        
-        
-        $result = array();
-        if ($this->getTabs()) {        
-            foreach ($this->getTabs() as $k => $v) {
-                if (!empty($fields[$k])) {
-                    $options = get_option( $k );                    
-                    foreach ($fields[$k]['fields'] as $dk => $dv) {
-                        if (!empty($options)) {
-                            if ( isset( $options[$dk] ) ) {
-                                $result[$k][$dk] = $options[$dk];                                
-                            } elseif ($dv['type'] !== 'checkbox' && isset ( $dv['default'])) {
-                                $result[$k][$dk] = $dv['default'];
-                            }
-                        } else {
-                            if ( isset ( $dv['default'] ) ) {
-                                $result[$k][$dk] = $dv['default'];
-                            }                               
-                        }
-                    }                    
-                }
-            }    
-        } 
-        return $this->getRecursiveCallable( $result );
-    }        
+    public function getTabs() {
+        return $this->getRecursiveCallable(parent::getTabs());
+    }    
     
     /**
      * Register settings
@@ -105,7 +109,7 @@ class RPw_ThemeSettings extends Agp_SettingsAbstract {
         global $pagenow;
 
         if ( $pagenow == 'admin.php' && isset($_REQUEST['is-reset']) && !isset($_REQUEST['settings-updated']) && $_REQUEST['page'] == $this->getPage() && $_REQUEST['tab'] == $this->getSettingsKey()) {
-            $message = 'Settings reset to default values';
+            $message = __( 'Settings reset to default values' , 'wcp-openweather');            
             echo '<div class="updated settings-error" id="setting-error-settings_updated"><p><strong>'.$message.'</strong></p></div>';            
         }
     }            

@@ -51,7 +51,7 @@
 .wcp-openweather-settings-popup .wcp-openweather-settings-section select { padding: 5px 8px; line-height: 32px; }
 .wcp-openweather-settings-popup .wcp-openweather-settings-section textarea { padding: 5px 8px; }
 .wcp-openweather-settings-popup .wcp-openweather-settings-field { margin: 0; padding: 0; line-height: 19px; }
-.wcp-openweather-settings-popup .wcp-openweather-settings-label { display: inline-block; font-size: 14px; line-height: 14px; padding: 0 0 5px; margin: 0; color: #333; }
+.wcp-openweather-settings-popup .wcp-openweather-settings-label { display: inline-block; font-size: 14px; line-height: 14px; padding: 0 0 5px; margin: 0; color: #333; vertical-align: baseline; }
 .wcp-openweather-settings-popup .wcp-openweather-settings-description { display: block; font-size: 12px; line-height: 14px; margin: 0; padding: 2px 0 0; color: #333; }
 .wcp-openweather-settings-popup .wcp-openweather-settings-description a { font-size: 12px; margin: 0; padding: 0; color: #03a9f4; text-decoration: underline; outline: none; border: 0; }
 .wcp-openweather-settings-popup .wcp-openweather-settings-description a:hover { font-size: 12px; margin: 0; padding: 0; color: #03a9f4; text-decoration: none; outline: none; border: 0; }
@@ -60,9 +60,9 @@
 .wcp-openweather-settings-popup .wcp-openweather-settings-section.wcp-openweather-settings-units .wcp-openweather-settings-field { float: left; width: 33.33%; padding: 0 0 0 2%; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
 .wcp-openweather-settings-popup .wcp-openweather-settings-section.wcp-openweather-settings-options .wcp-openweather-settings-field { width: 100%; overflow: hidden; padding-top: 6px; line-height: 16px; }
 .wcp-openweather-settings-popup .wcp-openweather-settings-section.wcp-openweather-settings-options .wcp-openweather-settings-field label { line-height: 15px; max-width: 95%; padding: 0; vertical-align: top; }
-.wcp-openweather-settings-popup .wcp-openweather-settings-section.wcp-openweather-settings-options .wcp-openweather-settings-field input[type="checkbox"] { float: left; padding: 0; margin: 1px 5px 0 0; }
+.wcp-openweather-settings-popup .wcp-openweather-settings-section.wcp-openweather-settings-options .wcp-openweather-settings-field input[type="checkbox"] { float: left; padding: 0; margin: 1px 5px 0 0; height: auto; min-width: inherit; width: auto !important; }
 .wcp-openweather-settings-popup .wcp-openweather-settings-actions { width: 100%; overflow: hidden; padding: 2px 0 0 0; margin: 0; }
-.wcp-openweather-settings-popup .wcp-openweather-settings-actions .wcp-openweather-settings-btn { float: left; background: #03a9f4 !important; border: 0 none !important; border-radius: 0 !important; box-shadow: none !important; color: #fff; cursor: pointer; font-size: 14px; line-height: 15px; margin: 0 0 0 15px; height: 33px; min-width: 160px; outline: none !important; padding: 9px 15px; text-shadow: none; text-transform: uppercase; text-align: center; vertical-align: bottom; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
+.wcp-openweather-settings-popup .wcp-openweather-settings-actions .wcp-openweather-settings-btn { float: left; background: #03a9f4 !important; border: 0 none !important; border-radius: 0 !important; box-shadow: none !important; color: #fff; cursor: pointer; font-size: 14px; line-height: 15px; margin: 0 0 0 15px; min-height: 33px; min-width: 160px; outline: none !important; padding: 9px 15px; text-shadow: none; text-transform: uppercase; text-align: center; vertical-align: bottom; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; text-decoration: none; word-wrap: break-word; }
 .wcp-openweather-settings-popup .wcp-openweather-settings-actions input[type="submit"].wcp-openweather-settings-btn { line-height: 13px; -webkit-appearance: none; }
 .wcp-openweather-settings-popup .wcp-openweather-settings-actions .wcp-openweather-settings-btn:first-child { margin: 0; }
 .wcp-openweather-settings-popup .wcp-openweather-settings-actions .wcp-openweather-settings-btn:hover { background: #03a9f4; opacity: 0.8; }

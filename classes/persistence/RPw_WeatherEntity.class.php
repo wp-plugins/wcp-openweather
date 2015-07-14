@@ -51,6 +51,7 @@ class RPw_WeatherEntity extends Agp_Entity {
         if (!empty($settings['windSpeedUnit'])) {
             $this->windSpeed = $convertor->speed($this->windSpeed, $settings['windSpeedUnit']);
         }        
+        
         if (!empty($settings['pressureUnit'])) {
             $this->pressure = $convertor->pressure($this->pressure, $settings['pressureUnit']);
         }        
@@ -172,7 +173,7 @@ class RPw_WeatherEntity extends Agp_Entity {
     }
     
     public function getTempUnitShort() {
-        return str_replace("&deg;", '', $this->getTempUnit());
+        return str_replace("&deg;", '', __($this->getTempUnit(), 'wcp-openweather'));
     }
 
 

@@ -10,7 +10,7 @@
 ?>
 <?php if (!empty($title)) :?>
 <h1><?php echo $title;?></h1>
-You can change current theme <a href="/wp-admin/admin.php?page=wcp-weather&tab=plugin-settings">here</a>.
+<?php _e('You can change current theme <a href="/wp-admin/admin.php?page=wcp-weather&tab=plugin-settings">here</a>.', 'wcp-openweather-theme'); ?>
 <?php endif;?>
 <div class="wrap">
     <?php 
@@ -26,8 +26,8 @@ You can change current theme <a href="/wp-admin/admin.php?page=wcp-weather&tab=p
         <?php echo $args->settings->getParentModule()->getTemplate('admin/options/render-page', $args); ?>
         
         <p class="submit">
-            <input id="submit" class="button button-primary" type="submit" value="Save Changes" name="submit">
-            <a class="button button-primary" href="?page=<?php echo $args->settings->getPage();?>&tab=<?php echo $args->key;?>&reset-settings=true" >Reset to Default</a>
+            <input id="submit" class="button button-primary" type="submit" value="<?php _e('Save Changes','wcp-openweather-theme'); ?>" name="submit">
+            <a class="button button-primary" href="?page=<?php echo $args->settings->getPage();?>&tab=<?php echo $args->key;?>&reset-settings=true" ><?php _e('Reset to Default','wcp-openweather-theme'); ?></a>
         </p>
     </form>
 </div>

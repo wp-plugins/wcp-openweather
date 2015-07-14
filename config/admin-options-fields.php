@@ -3,14 +3,14 @@ return array(
     'global-settings' => array(
         'sections' => array(
             'location' => array(
-                'label' => 'Location',
+                'label' => __('Location', 'wcp-openweather'),
             ),            
             'units' => array(
-                'label' => 'Units',
+                'label' => __('Units', 'wcp-openweather'),
                 'class' => 'wcp-openweather-settings-units',
             ),
             'options' => array(
-                'label' => 'Display options',
+                'label' => __('Display Options', 'wcp-openweather'),
                 'class' => 'wcp-openweather-settings-options',
             ),
         ),
@@ -24,17 +24,25 @@ return array(
                 'note' => '',
             ),                                    
             'city' => array(
-                'label' => 'City Name',            
+                'label' => __('City Name', 'wcp-openweather'),
                 'type' => 'city',                        
                 'default' => '',
                 'section' => 'location',
                 'class' => 'widefat rpw-gm-city',
                 'wrapper_class' => '',
-                'note' => 'You can find you city name on <a href="http://www.openweathermap.com/" title="http://www.openweathermap.com/" target="_blank">www.openweathermap.com</a>.',
-            ),                        
+                'note' => __('You can find you city name on <a href="http://www.openweathermap.com/" title="http://www.openweathermap.com/" target="_blank">www.openweathermap.com</a>.', 'wcp-openweather'),
+            ),      
+            'city_data' => array(
+                'label' => 'City Data',            
+                'type' => 'hidden',                        
+                'default' => '',
+                'section' => 'location',
+                'class' => 'widefat rpw-gm-city-data',
+                'note' => '',
+            ),                     
             'tempUnit' => array(
                 'type' => 'select',
-                'label' => 'Temperature',
+                'label' => __('Temperature', 'wcp-openweather'),
                 'fieldSet' => 'temp',
                 'default' => 'c',
                 'section' => 'units',
@@ -42,7 +50,7 @@ return array(
             ),
             'windSpeedUnit' => array(
                 'type' => 'select',
-                'label' => 'Wind Speed',
+                'label' => __('Wind Speed', 'wcp-openweather'),
                 'fieldSet' => 'windSpeed',
                 'default' => 'ms',
                 'section' => 'units',
@@ -50,7 +58,7 @@ return array(
             ),
             'pressureUnit' => array(
                 'type' => 'select',
-                'label' => 'Pressure',
+                'label' => __('Pressure', 'wcp-openweather'),
                 'fieldSet' => 'pressure',
                 'default' => 'mmHg',
                 'section' => 'units',
@@ -58,14 +66,14 @@ return array(
             ),      
             'showCurrentWeather' => array(
                 'type' => 'checkbox',
-                'label' => 'Show current weather',
+                'label' => __('Show current weather', 'wcp-openweather'),
                 'default' => 1,
                 'section' => 'options',
                 'class' => '',
             ),              
             'showForecastWeather' => array(
                 'type' => 'checkbox',
-                'label' => 'Show 5 day forecast',
+                'label' => __('Show 5 day forecast', 'wcp-openweather'),
                 'default' => '',
                 'section' => 'options',
                 'class' => '',
@@ -75,63 +83,87 @@ return array(
     'plugin-settings' => array(
         'sections' => array(
             'options' => array(
-                'label' => 'Options',
+                'label' => __('General', 'wcp-openweather'),
+            ),
+            'user_options' => array(
+                'label' => __('User Options', 'wcp-openweather'),
+            ),            
+            'other_options' => array(
+                'label' => __('Other', 'wcp-openweather'),
             ),
         ),   
-        'fields' => array(        
-            'enableUserSettings' => array(
-                'label' => 'Enable User Options',            
-                'type' => 'checkbox',                        
+        'fields' => array(    
+            'lang' => array(
+                'type' => 'lang',
+                'label' => __('Language', 'wcp-openweather'),
+                'fieldSet' => 'lang',
                 'default' => '',
                 'section' => 'options',
+                'class' => 'widefat regular-select',
+                'note' => '',
+            ),                   
+            'theme' => array(
+                'type' => 'select',
+                'label' => __('Current Theme', 'wcp-openweather'),
+                'fieldSet' => 'theme',
+                'default' => 'default',
+                'section' => 'options',
+                'class' => 'widefat regular-select',
+                'note' => '',
+            ),  
+            'refreshPeriod' => array(
+                'type' => 'select',
+                'label' => __('Refresh Time', 'wcp-openweather'),
+                'fieldSet' => 'refreshPeriod',
+                'default' => '0',
+                'section' => 'options',
+                'class' => 'widefat regular-select',
+            ),            
+            'hideWeatherConditions' => array(
+                'label' => __('Hide Description of the Weather Conditions', 'wcp-openweather'),
+                'type' => 'checkbox',                        
+                'default' => '',
+                'section' => 'other_options',
+                'class' => '',
+            ),            
+            'noDataMessage' => array(
+                'label' => __('"No Data" Message', 'wcp-openweather'),
+                'type' => 'text',                        
+                'default' => '',
+                'section' => 'other_options',
+                'class' => 'widefat',
+                'note' => '',       
+            ),                        
+            'enableUserSettings' => array(
+                'label' => __('Enable User Options', 'wcp-openweather'),
+                'type' => 'checkbox',                        
+                'default' => '',
+                'section' => 'user_options',
                 'class' => '',
             ),
             'expireUserSettings' => array(
-                'label' => 'Expire User Options (days)',
+                'label' => __('Expire User Options (days)', 'wcp-openweather'),
                 'type' => 'number',                        
-                'default' => '30',
-                'section' => 'options',
+                'default' => '7',
+                'section' => 'user_options',
                 'class' => 'widefat',
                 'note' => '',       
                 'atts' => array(
                     'min' => 0,
                 ),                                
             ),
-            'refreshPeriod' => array(
-                'type' => 'select',
-                'label' => 'Refresh time',
-                'fieldSet' => 'refreshPeriod',
-                'default' => '0',
-                'section' => 'options',
-                'class' => 'widefat regular-select',
-            ),
-            'theme' => array(
-                'type' => 'select',
-                'label' => 'Current Theme',
-                'fieldSet' => 'theme',
-                'default' => 'default',
-                'section' => 'options',
-                'class' => 'widefat regular-select',
-                'note' => '',
-            ),            
         ),
     ),
     'api-settings' => array(
         'fields' => array(        
             'appid' => array(
-                'label' => 'API key',            
+                'label' => __('API key', 'wcp-openweather'),            
                 'type' => 'text',                        
                 'default' => '',
                 'class' => 'widefat',
-                'note' => 'How to get API key you can see <a href="http://openweathermap.org/appid" title="http://openweathermap.org/appid" target="_blank">here</a>.',
+                'note' =>  __('How to get API key you can see <a href="http://openweathermap.org/appid" title="http://openweathermap.org/appid" target="_blank">here</a>.', 'wcp-openweather'),
             ),
-//            'lang' => array(
-//                'label' => 'Language',            
-//                'type' => 'text',                        
-//                'default' => 'en',
-//                'class' => 'widefat',
-//                'note' => 'Languages that you can use with the corresponded lang values:<br/> English - en, Russian - ru, Italian - it, Spanish - es (or sp), Ukrainian - uk (or ua), German - de, Portuguese - pt, Romanian - ro, Polish - pl, Finnish - fi, Dutch - nl, French - fr, Bulgarian - bg, Swedish - sv (or se), Chinese Traditional - zh_tw, Chinese Simplified - zh (or zh_cn), Turkish - tr, Croatian - hr, Catalan - ca ',                
-//            ),
+
         ),        
     ),
 );

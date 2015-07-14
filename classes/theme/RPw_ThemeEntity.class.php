@@ -37,7 +37,7 @@ class RPw_ThemeEntity extends Agp_Module {
     
     public function adminMenu() {
         if ($this->active) {
-            add_submenu_page('wcp-weather-main', 'Theme Settings', 'Theme Settings', 'manage_options', 'wcp-theme' , array('RPw_Settings', 'renderThemeSettingsPage') );                    
+            add_submenu_page('wcp-weather-main', __('Theme Settings', 'wcp-openweather'), __('Theme Settings', 'wcp-openweather'), 'manage_options', 'wcp-theme' , array('RPw_Settings', 'renderThemeSettingsPage') );                    
         }
     }    
     
@@ -46,8 +46,12 @@ class RPw_ThemeEntity extends Agp_Module {
         wp_enqueue_style( $this->uniqueId . '-css', $this->getAssetUrl('css/style.css') );    
     }            
     
-    public function renderIcon ($item) {
-        return '<img src="' . $item->getWeatherIconUrl() .'" alt="' . $item->getWeatherDescription() . '"  title="' . $item->getWeatherDescription() . '"/>';
+    public function renderIcon ($item, $hideWeatherConditions = FALSE) {
+        if ($hideWeatherConditions) {
+            return '<img src="' . $item->getWeatherIconUrl() .'" alt=""  title=""/>';
+        } else {
+            return '<img src="' . $item->getWeatherIconUrl() .'" alt="' . $item->getWeatherDescription() . '"  title="' . $item->getWeatherDescription() . '"/>';    
+        }
     }        
     
     public function doShortcode ($atts, $content, $tag) {
@@ -104,6 +108,13 @@ class RPw_ThemeEntity extends Agp_Module {
             return $exlude[$tag];
         }
         return array();
+    }
+    
+    public function isLangExists( $lang ) {
+        $languages = $this->settings->getFieldSet('languages');
+        if (!empty($languages)) {
+            return array_key_exists($lang, $languages);    
+        }
     }
     
     public function getId() {

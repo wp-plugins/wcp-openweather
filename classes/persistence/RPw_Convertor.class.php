@@ -44,14 +44,11 @@ class RPw_Convertor {
             case 'ms':
                 $value = round(($value), 0);
             break;
-//            case 'beaufort':
-//                $value = round(($value), 2);
-//            break;
             case 'Knots':
                 $value = round(($value * 1.943845), 0);
             break;
         }
-        return $value .' '. $fieldSet[$unit] ;
+        return $value .' '. __( $fieldSet[$unit], 'wcp-openweather') ;
     }    
     
     public function pressure($value, $unit) {
@@ -97,11 +94,31 @@ class RPw_Convertor {
                 $value = round(($value * 0.750064), 2);
             break;
         }
-        return $value .' '. $fieldSet[$unit] ;
+        return $value .' '. __( $fieldSet[$unit], 'wcp-openweather') ;
     }
     
     public function degree( $value ) { 
-        $arr=array("N","NNE","NE","ENE","E","ESE", "SE", "SSE","S","SSW","SW","WSW","W","WNW","NW","NNW","N");
-        return $arr[ abs(floor(($value + 11.25) / 22.5)) ] ;
+        if (isset($value)) {
+            $arr=array(
+                __( "N", 'wcp-openweather'),
+                __( "NNE", 'wcp-openweather'),
+                __( "NE", 'wcp-openweather'),
+                __( "ENE", 'wcp-openweather'),
+                __( "E", 'wcp-openweather'),
+                __( "ESE", 'wcp-openweather'), 
+                __( "SE", 'wcp-openweather'), 
+                __( "SSE", 'wcp-openweather'),
+                __( "S", 'wcp-openweather'),
+                __( "SSW", 'wcp-openweather'),
+                __( "SW", 'wcp-openweather'),
+                __( "WSW", 'wcp-openweather'),
+                __( "W", 'wcp-openweather'),
+                __( "WNW", 'wcp-openweather'),
+                __( "NW", 'wcp-openweather'),
+                __( "NNW", 'wcp-openweather'),
+                __( "N", 'wcp-openweather')
+            );
+            return $arr[ abs(floor(($value + 11.25) / 22.5)) ] ;            
+        }
     }    
 }

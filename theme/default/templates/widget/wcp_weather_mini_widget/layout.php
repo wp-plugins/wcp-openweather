@@ -11,9 +11,9 @@
     $hasData = !empty($weather) || !empty($forecast);
 
     if (!empty($weather)) {
-        $city = $weather->getCity()->getName().', '.$weather->getCity()->getCountry();
+        $city = $weather->getCity()->getDisplayName();
     } elseif (!empty($forecast)) {
-        $city = $forecast->getCity()->getName().', '.$forecast->getCity()->getCountry();
+        $city = $forecast->getCity()->getDisplayName();
     } else {
         $city = $settings['city'];
     }
@@ -25,7 +25,7 @@
     $color = isset($settings['themeOptions']['text_color']) ? $settings['themeOptions']['text_color'] : NULL;
     $secondary_color = isset($settings['themeOptions']['secondary_text_color']) ? $settings['themeOptions']['secondary_text_color'] : NULL;    
     
-    $currentDate = date( 'M j - D') ;    
+    $currentDate = RPw()->getDate( '%b %e - %a' ) ;
 ?>
 <style>
     .wcp-openweather-primary-background { <?php if (!empty($background)): echo "background: $background !important;"; endif;?> }
@@ -69,6 +69,7 @@
             </div>   
             <?php 
                 if ( !empty($weather) ) :
+                    $weather->hideWeatherConditions = $settings['hideWeatherConditions'];
                     echo RPw_Theme::instance()->getTemplate('widget/wcp_weather_mini_widget/now', $weather);
                 endif;
             ?>    
@@ -77,6 +78,7 @@
         
         <?php 
             if (!empty($forecast)) :
+                $forecast->hideWeatherConditions = $settings['hideWeatherConditions'];
                 echo RPw_Theme::instance()->getTemplate('widget/wcp_weather_mini_widget/forecast', $forecast);
             endif;                
         ?>                

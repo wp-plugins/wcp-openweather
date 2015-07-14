@@ -22,8 +22,6 @@ class RPw_OpenWeather extends Agp_Curl {
         parent::__construct('http://api.openweathermap.org');
         $this->setBaseRoute('data/2.5');
         $this->addRequestParam('mode', 'json');
-        //$this->addRequestParam('units', 'metric');
-        $this->addRequestParam('lang', 'en'); //TODO
     }
         
     public function get($requestParams = array(), $route='') {
@@ -74,7 +72,7 @@ class RPw_OpenWeather extends Agp_Curl {
                         'pressure' => $response->main->pressure,
                         'humidity' => $response->main->humidity,                        
                         'windSpeed' => $response->wind->speed,
-                        'windDeg' => $response->wind->deg,    
+                        'windDeg' => !empty($response->wind->deg) ? $response->wind->deg : NULL,    
                         'weatherId' => $weather->id,    
                         'weatherMain' => $weather->main,    
                         'weatherDescription' => $weather->description,    
@@ -118,7 +116,7 @@ class RPw_OpenWeather extends Agp_Curl {
                     'pressure' => $item->main->pressure,
                     'humidity' => $item->main->humidity,
                     'windSpeed' => $item->wind->speed,
-                    'windDeg' => $item->wind->deg,   
+                    'windDeg' => !empty($item->wind->deg) ? $item->wind->deg : NULL,   
                     'weatherId' => $weather->id,    
                     'weatherMain' => $weather->main,    
                     'weatherDescription' => $weather->description,    
@@ -167,7 +165,7 @@ class RPw_OpenWeather extends Agp_Curl {
                     'pressure' => $item->pressure,
                     'humidity' => $item->humidity,
                     'windSpeed' => $item->speed,
-                    'windDeg' => $item->deg, 
+                    'windDeg' => !empty($item->deg) ? $item->deg : NULL, 
                     'weatherId' => $weather->id,    
                     'weatherMain' => $weather->main,    
                     'weatherDescription' => $weather->description,    

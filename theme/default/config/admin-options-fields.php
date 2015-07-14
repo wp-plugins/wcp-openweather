@@ -9,7 +9,7 @@ return array(
         'fields' => array(
             'background_color' => array(
                 'type' => 'colorpicker',
-                'label' => 'Background Color',
+                'label' => __('Background Color', 'wcp-openweather-theme'),
                 'default' => '',
                 'section' => 'global',
                 'class' => '',
@@ -19,7 +19,7 @@ return array(
             ),
             'text_color' => array(
                 'type' => 'colorpicker',
-                'label' => 'Text Color',
+                'label' => __('Text Color', 'wcp-openweather-theme'),
                 'default' => '',
                 'section' => 'global',
                 'class' => '',

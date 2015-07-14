@@ -41,6 +41,11 @@ class RPw extends Agp_Module {
      */
     private $currentTheme;
     
+    /**
+     * Default Theme Name
+     * 
+     * @var string
+     */
     private $defaultThemeName = 'default';
     
     /**
@@ -76,7 +81,7 @@ class RPw extends Agp_Module {
     
     public function __construct() {
         parent::__construct(dirname(dirname(__FILE__)));
-        
+
         $this->ajax = RPw_Ajax::instance();   
         $this->settings = RPw_Settings::instance( $this );
         $this->api = new RPw_OpenWeather();
@@ -85,8 +90,65 @@ class RPw extends Agp_Module {
         add_action( 'init', array($this, 'init' ), 999 );        
         add_action( 'wp_enqueue_scripts', array($this, 'enqueueScripts' ) );    
         add_action( 'admin_enqueue_scripts', array($this, 'enqueueAdminScripts' ));                    
+        add_action( 'init', array($this, 'loadTranslation' ));
+        add_filter( 'plugin_locale', array($this, 'pluginLocale' ), 10, 2 );
+        add_action( 'admin_init', array($this, 'tinyMCEButtons' ) );   
+        add_action( 'admin_footer-post.php', array( $this, 'createConstructorForm' ) );       
+        add_action( 'admin_footer-post-new.php', array( $this, 'createConstructorForm' ) );       
+        
         $this->registerThemes();
     }
+    
+    public function pluginLocale ($locale, $domain) {
+        if ( in_array($domain, array('wcp-openweather', 'wcp-openweather-theme')) ) {
+            return $this->getPluginLocale();
+        }
+        return $locale;
+    }    
+    
+    public function loadTranslation() {
+        load_plugin_textdomain('wcp-openweather', FALSE, basename($this->getBaseDir()) .'/languages');
+    }
+    
+    public function enqueueScripts () {
+        wp_enqueue_style( 'wp-color-picker' );        
+        wp_enqueue_script( 'wp-color-picker' );            
+        wp_enqueue_script('colorbox-js', $this->getAssetUrl() . '/libs/colorbox/jquery.colorbox-min.js',array('jquery'));
+        wp_enqueue_style('colorbox-css', $this->getAssetUrl() . '/libs/colorbox/colorbox.css');        
+        
+        wp_enqueue_script( 'iris', $this->getAssetUrl('libs/iris/iris.min.js'), array( 'jquery-ui-draggable', 'jquery-ui-slider', 'jquery-touch-punch' ), false, 1 );
+        
+        wp_enqueue_script( 'rpw-gm', 'https://maps.googleapis.com/maps/api/js?libraries=places&v=3.20&language=' . $this->getPluginLang() );            
+        
+        wp_enqueue_script( 'rpw', $this->getAssetUrl('js/main.js'), array('jquery', 'rpw-gm', 'iris') );  
+        wp_localize_script( 'rpw', 'ajax_rpw', array( 
+            'base_url' => site_url(),         
+            'ajax_url' => admin_url( 'admin-ajax.php' ), 
+            'ajax_nonce' => wp_create_nonce('ajax_atf_nonce'),        
+        ));  
+        
+        wp_enqueue_style( 'rpw-css', $this->getAssetUrl('css/style.css') ); 
+    }        
+    
+    public function enqueueAdminScripts () {
+        wp_enqueue_style( 'wp-color-picker' );        
+        wp_enqueue_script( 'wp-color-picker' );          
+        wp_enqueue_script('colorbox-js', $this->getAssetUrl() . '/libs/colorbox/jquery.colorbox-min.js',array('jquery'));
+        wp_enqueue_style('colorbox-css', $this->getAssetUrl() . '/libs/colorbox/colorbox.css');        
+                
+        wp_enqueue_script( 'rpw-gm', 'https://maps.googleapis.com/maps/api/js?libraries=places&v=3.20&language=' . $this->getPluginLang() );            
+        
+        wp_enqueue_script( 'rpw', $this->getAssetUrl('js/admin.js'), array('jquery', 'rpw-gm', 'wp-color-picker', 'colorbox-js') );                                                         
+        wp_enqueue_style( 'rpw-css', $this->getAssetUrl('css/admin.css'));  
+        
+        wp_localize_script( 'rpw', 'ajax_rpw', array( 
+            'base_url' => site_url(),         
+            'ajax_url' => admin_url( 'admin-ajax.php' ), 
+            'ajax_nonce' => wp_create_nonce('ajax_atf_nonce'),  
+            'tinyMCEButtonTitle' => __('Add new WCP OpenWeather shortcode', 'wcp-openweather'),
+        ));  
+        
+    }    
     
     public function init () {
         $pluginSettings = RPw()->getSettings()->getPluginSettings();
@@ -166,38 +228,28 @@ class RPw extends Agp_Module {
         }
     }
     
-    public function enqueueScripts () {
-        wp_enqueue_style( 'wp-color-picker' );        
-        wp_enqueue_script( 'wp-color-picker' );            
-        wp_enqueue_script('colorbox-js', $this->getAssetUrl() . '/libs/colorbox/jquery.colorbox-min.js',array('jquery'));
-        wp_enqueue_style('colorbox-css', $this->getAssetUrl() . '/libs/colorbox/colorbox.css');        
-        
-        wp_enqueue_script( 'iris', $this->getAssetUrl('libs/iris/iris.min.js'), array( 'jquery-ui-draggable', 'jquery-ui-slider', 'jquery-touch-punch' ), false, 1 );
-        
-        wp_enqueue_script( 'rpw-gm', 'https://maps.googleapis.com/maps/api/js?libraries=places&v=3.20&language=en' );            
-        
-        wp_enqueue_script( 'rpw', $this->getAssetUrl('js/main.js'), array('jquery', 'rpw-gm', 'iris') );  
-        wp_localize_script( 'rpw', 'ajax_rpw', array( 
-            'base_url' => site_url(),         
-            'ajax_url' => admin_url( 'admin-ajax.php' ), 
-            'ajax_nonce' => wp_create_nonce('ajax_atf_nonce'),        
-        ));  
-        
-        wp_enqueue_style( 'rpw-css', $this->getAssetUrl('css/style.css') ); 
-    }        
-    
-    public function enqueueAdminScripts () {
-        wp_enqueue_style( 'wp-color-picker' );        
-        wp_enqueue_script( 'wp-color-picker' );            
-        
-        wp_enqueue_script( 'rpw-gm', 'https://maps.googleapis.com/maps/api/js?libraries=places&v=3.20&language=en' );            
-        
-        wp_enqueue_script( 'rpw', $this->getAssetUrl('js/admin.js'), array('jquery', 'rpw-gm') );                                                         
-        wp_enqueue_style( 'rpw-css', $this->getAssetUrl('css/admin.css'));  
-        
-        
+    public function createConstructorForm() {
+        echo RPw()->getTemplate('admin/constructor/constructor', array());
     }    
     
+    public function tinyMCEButtons () {
+        if ( current_user_can('edit_posts') && current_user_can('edit_pages')) {
+            if ( get_user_option('rich_editing') == 'true' ) {
+               add_filter( 'mce_buttons', array($this, 'tinyMCERegisterButtons'));                
+               add_filter( 'mce_external_plugins', array($this, 'tinyMCEAddPlugin') );
+            }        
+        }        
+    }
+    
+    public function tinyMCERegisterButtons( $buttons ) {
+       array_push( $buttons, "|", "wcp_openweather" );
+       return $buttons;
+    }    
+    
+    public function tinyMCEAddPlugin( $plugin_array ) {
+        $plugin_array['wcp_openweather'] = $this->getAssetUrl() . '/js/wcp-openweather.js';
+        return $plugin_array;        
+    }            
     
     public function getSettingsById ($id = 'default-weather-id', $atts = NULL ) {
         $userOptions = $this->settings->getUserOptions()->get($id);        
@@ -206,30 +258,43 @@ class RPw extends Agp_Module {
             return $userOptions;
         }
         
+        $atts = $this->settings->upperSettings($atts);
         $plugin = $this->settings->getPluginSettings();
         
         $defaults = $this->settings->getWeatherSettings() ;
-        $defaults = $this->settings->lowerSettings($defaults);
+        $defaults = $this->settings->upperSettings($defaults);
         $defaults['id'] = $id;
         
         if (isset($atts) && is_array($atts)) {
-            $atts = $this->settings->lowerSettings($atts);
-            if (!empty($atts['uniqueid'])) {
-                $defaults['uniqueid'] = $atts['uniqueid'];        
+            if (!empty($atts['uniqueId'])) {
+                $defaults['uniqueId'] = $atts['uniqueId'];        
+            }
+            
+            if (!isset($atts['city_data']) && !empty($atts['city'])) {
+                $atts['city_data'] = '';
             }
         }
         
         $enableUserSettings = 0;
-        if (isset($atts['enableusersettings'])) {
-            $enableUserSettings = $atts['enableusersettings'];
+        if (isset($atts['enableUserSettings'])) {
+            $enableUserSettings = $atts['enableUserSettings'];
         } else {
             if (!empty($plugin['enableUserSettings'])) : 
                 $enableUserSettings = 1;
             endif;                            
         }
-                
+        
+        $hideWeatherConditions = 0;
+        if (isset($atts['hideWeatherConditions'])) {
+            $hideWeatherConditions = $atts['hideWeatherConditions'];
+        } else {
+            if (!empty($plugin['hideWeatherConditions'])) : 
+                $hideWeatherConditions = 1;
+            endif;                            
+        }        
+        
         if (empty($userOptions['uniqueId']) 
-            || $userOptions['uniqueId'] != $defaults['uniqueid']
+            || $userOptions['uniqueId'] != $defaults['uniqueId']
             || empty($enableUserSettings) && isset($atts)
         ) {
             $this->settings->getUserOptions()->reset($id);
@@ -244,34 +309,54 @@ class RPw extends Agp_Module {
                 $atts = array_merge( $defaults, $atts );    
             } else {
                 $atts = $defaults;
-            }
+            }            
+        }     
+        
+        $atts['enableUserSettings'] = $enableUserSettings;        
+        $atts['hideWeatherConditions'] = $hideWeatherConditions;        
+        
+        $this->settings->getUserOptions()->set($id, $atts);                        
             
-            $atts = $this->settings->upperSettings($atts);
-        
-            $this->settings->getUserOptions()->set($id, $atts);            
-        }        
-
-        $atts['enableUserSettings'] = $enableUserSettings;
-        
         return $atts;
     }
     
     public function getWeatherById($id) {
         $result = array();
         $api = $this->settings->getAPISettings();
+        $plugin = $this->settings->getPluginSettings();
+        
         $settings = $this->getSettingsById($id);
         if (!empty($settings['city'])) {
-            //RPw::debug($settings['city']);
-            $city = stripslashes(str_replace('  ',' ', str_replace(', ', ',', $settings['city'])));
-            $city = preg_replace("/&([a-z])[a-z]+;/i", "$1", htmlentities($city));
-            //RPw::debug($city);
-            $this->api->addRequestParam('q', $city);        
+            $lang = $this->getPluginLang();
+            
+            if (!empty($settings['city_data'])) {
+                
+                parse_str(html_entity_decode(esc_attr($settings['city_data']), ENT_QUOTES), $city_data);
+            
+                if (!empty($city_data['lat']) && !empty($city_data['lng'])) {
+                    $this->api->addRequestParam('lat', $city_data['lat']);
+                    $this->api->addRequestParam('lon', $city_data['lng']);
+                } else {
+                    $city = stripslashes(str_replace('  ',' ', str_replace(', ', ',', $city_data['full_name'])));
+                    $city = preg_replace("/&([a-z])[a-z]+;/i", "$1", htmlentities($city));                    
+                    $this->api->addRequestParam('id', $city);
+                }
+            } else {
+                $city = stripslashes(str_replace('  ',' ', str_replace(', ', ',', $settings['city'])));
+                $city = preg_replace("/&([a-z])[a-z]+;/i", "$1", htmlentities($city));
+                
+                if (is_numeric($city)) {
+                    $this->api->addRequestParam('id', $city);                        
+                } else {
+                    $this->api->addRequestParam('q', $city);                            
+                }
+            }
             
             if (!empty($api['appid'])) {
                 $this->api->addRequestParam('APPID', $api['appid']);
             }
-            if (!empty($api['lang'])) {
-                $this->api->addRequestParam('lang', $api['lang']);
+            if (!empty($lang)) {
+                $this->api->addRequestParam('lang', $lang);
             }    
 
             $this->api->setCurrentSessionId($id);
@@ -281,6 +366,9 @@ class RPw extends Agp_Module {
                 if (!empty($weather) && $weather->getCount() > 0) {
                     $weather->applySettings($settings);
                     $weather->applyThemeUrl($this->getCurrentTheme()->getAssetUrl());
+                    if (!empty($city_data)) {
+                        $weather->getCity()->setExtendedInfo($city_data);    
+                    }
                     $result['weather'] = $weather;
                 }          
             }        
@@ -289,12 +377,62 @@ class RPw extends Agp_Module {
                 $forecast = $this->api->getDailyForecast(5);
                 if (!empty($forecast) && $forecast->getCount() > 0) {
                     $forecast->applySettings($settings);
+                    if (!empty($city_data)) {
+                        $forecast->getCity()->setExtendedInfo($city_data);    
+                    }                    
                     $result['forecast'] = $forecast;
                 }          
             } 
         }        
         
         return $result;
+    }
+    
+    public function getPluginLocale () {
+        $plugin = $this->settings->getPluginSettings();
+        $lang = !empty($plugin['lang']) ? $plugin['lang'] : get_locale();
+        $languages = $this->settings->getFieldSet('languages');
+        
+        if (!empty($languages) && !empty($lang)) {
+            if (array_key_exists($lang, $languages)) {
+                return $lang;    
+            } else {
+                foreach ($languages as $k => $v ) {
+                    $plang = $this->getPluginLang($k);
+                    if ($lang == $plang) {
+                        return $k;
+                    }
+                }
+            }            
+        }
+        
+        return get_locale();
+    }
+    
+    public function getPluginLang ($lang = NULL) {
+        if (empty($lang)) {
+            $lang = $this->getPluginLocale();    
+        }
+        $lang = explode('_', $lang);
+        $lang = $lang[0];
+        return $lang;
+    }
+    
+    public function getDate($format = '', $date = NULL) {
+        $locale = get_locale();
+        if (!isset($date)) {
+            $date = time();
+        }
+        
+        setlocale(LC_TIME, "{$this->getPluginLocale()}.UTF-8");
+        $result = strftime($format, $date);
+        setlocale(LC_TIME, $locale);
+        
+        return $result;
+    }
+    
+    public function getLanguages () {
+        return $this->settings->getLanguages();
     }
     
     public function getApi() {
@@ -320,4 +458,5 @@ class RPw extends Agp_Module {
     public function getDefaultThemeName() {
         return $this->defaultThemeName;
     }
+    
 }

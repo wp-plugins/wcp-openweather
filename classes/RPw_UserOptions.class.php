@@ -52,7 +52,7 @@ class RPw_UserOptions {
      */
     public function __construct() {
         $this->name = strtolower(get_class($this));
-        $this->expire = 2592000; //86400 * 30;
+        $this->expire = 86400 * 7; //7 days
     }
     
     private function _normalizeKey ( $key ) {
@@ -71,7 +71,11 @@ class RPw_UserOptions {
     private function _getCookie ($key) {
         $modKey = $this->name . '_' . $this->_normalizeKey($key);
         if (!empty($_COOKIE[$modKey])) {
-            return unserialize(base64_decode(stripslashes($_COOKIE[$modKey])));
+            $res = base64_decode(stripslashes($_COOKIE[$modKey]));
+            if (!$res) {
+                $res = stripslashes($_COOKIE[$modKey]);
+            }
+            return unserialize($res);
         } else {
             return array();
         }
@@ -92,7 +96,10 @@ class RPw_UserOptions {
     }
     
     public function reset($key) {
-        $this->_setCookie($key, array());
+        $cookie = $this->_getCookie($key);                
+        if (!empty($cookie)) {
+            $this->_setCookie($key, array());    
+        }
     }    
     
     public function exists($key) {

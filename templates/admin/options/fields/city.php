@@ -13,6 +13,9 @@
     }
     
     $value = esc_attr($args->data[$args->field]);
+    
+    $label = __( $label, 'wcp-openweather' );
+    $note = __( $note, 'wcp-openweather' );
 ?>
 <tr>
     <th scope="row"><?php echo $label;?></th>

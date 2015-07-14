@@ -11,8 +11,8 @@ class RPw_WeatherMini extends RPw_Weather {
 	 * Sets up the widgets name etc
 	 */
 	public function __construct() {
-		$widget_ops = array( 'description' => __( "Adds mini weather to sidebar") );
-		\WP_Widget::__construct( $this->widgetTag, __('WCP Weather Mini'), $widget_ops);
+		$widget_ops = array( 'description' => __( "Adds mini weather to sidebar", 'wcp-openweather-theme') );
+		\WP_Widget::__construct( $this->widgetTag, __('WCP Weather Mini', 'wcp-openweather-theme'), $widget_ops);
 	}
     
 }
