@@ -109,7 +109,7 @@ class RPw_Weather extends \WP_Widget {
     }    
     
     public function renderShowCurrentWeatherField ($showCurrentWeather) {
-        $showCurrentWeather = !empty($showCurrentWeather) ? $showCurrentWeather : 1;        
+        $showCurrentWeather = !empty($showCurrentWeather) ? 1 : 0;        
     ?>
         <input class="checkbox" type="checkbox" id="<?php echo $this->get_field_id( 'showCurrentWeather' ); ?>" name="<?php echo $this->get_field_name( 'showCurrentWeather' ); ?>" <?php checked( $showCurrentWeather ); ?>>                
         <label for="<?php echo esc_attr( $this->get_field_id( 'showCurrentWeather' ) ); ?>"><?php _e( 'Show current weather', 'wcp-openweather-theme' ); ?></label>         

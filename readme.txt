@@ -173,6 +173,9 @@ More information can be found in the section [screenshots](https://wordpress.org
 12. Admin Panel :: Theme Settings
 
 == Changelog ==
+= 1.1.1 =
+* Minor bugfixing
+
 = 1.1.0 =
 * Added: multilanguage support
 * Added: visual shortcode generator for TinyMCE editor
