@@ -74,6 +74,8 @@ class RPw_Ajax extends Agp_AjaxAbstract {
                 }
             }
             
+            unset($atts['uniqueId']);
+
             $s = '';
             foreach ($atts as $key => $value) {
                 if (is_string($value)) {

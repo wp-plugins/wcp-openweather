@@ -173,6 +173,9 @@ More information can be found in the section [screenshots](https://wordpress.org
 12. Admin Panel :: Theme Settings
 
 == Changelog ==
+= 1.1.4 =
+* Changed: Removed "uniqueId" parameter from the shortcodes generator result
+
 = 1.1.3 =
 * Minor bugfixing
 
