@@ -1,6 +1,6 @@
 <?php
 /**
- * WCP OpenWeather - Metro Theme
+ * WCP OpenWeather - Default Theme
  * 
  * @author webcodin <info@webcodin.com>
  * @license GPLv2

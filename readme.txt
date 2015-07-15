@@ -173,6 +173,9 @@ More information can be found in the section [screenshots](https://wordpress.org
 12. Admin Panel :: Theme Settings
 
 == Changelog ==
+= 1.1.5 =
+* Fixed the issue with the error "mysqli::mysqli(): (HY000/2005): Unknown MySQL server host"
+
 = 1.1.4 =
 * Changed: Removed "uniqueId" parameter from the shortcodes generator result
 

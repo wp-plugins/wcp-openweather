@@ -4,13 +4,6 @@ use Webcodin\WCPOpenWeather\Core\Agp_MySqlDb;
 class RPw_UserOptions {
     
     /**
-     * Database
-     * 
-     * @var Agp_MySqlDb
-     */
-    private $db;
-    
-    /**
      * Table Name
      * 
      * @var string
@@ -68,7 +61,6 @@ class RPw_UserOptions {
     public function __construct() {
         global $wpdb;
         
-        $this->db = new Agp_MySqlDb(DB_HOST, DB_NAME , DB_USER, DB_PASSWORD);
         $this->tableName = $wpdb->prefix . "wcp_useroptions";
             
         $this->expire = 86400 * 7; //7 days by default
@@ -93,6 +85,7 @@ class RPw_UserOptions {
     }
     
     private function _setDbCookie ($key, $value = array()) {
+        global $wpdb;
         $id = $this->id;
         $key = $this->_normalizeKey($key);
         $data = base64_encode(serialize($value));
@@ -100,25 +93,19 @@ class RPw_UserOptions {
         
         $sql = "REPLACE INTO {$this->tableName} VALUES ('$id', '$key', '$data', '$access')";
         
-        $errNo = $this->db->connect();
-        if ( $errNo == 0) {
-            $this->db->getDb()->query($sql);
-            $this->db->disconnect();
-        } else {
-            $this->db->disconnect();
-            throw new Agp_DbConnectException('Cannot establish connection to database.', $errNo);
-        }        
+        $wpdb->query($sql);
     }
     
     private function _getDbCookie ($key) {
+        global $wpdb;
         $id = $this->id;
         $key = $this->_normalizeKey($key);
         
         $sql = "SELECT data FROM {$this->tableName} WHERE `id` = '{$id}' AND `key` = '$key'";
-        $result = $this->db->execSql($sql);
+        $result = $wpdb->get_row($sql, ARRAY_A);
         
-        if (!empty($result[0]['data'])) {
-            $data = $result[0]['data'];
+        if (!empty($result['data'])) {
+            $data = $result['data'];
             $res = base64_decode(stripslashes($data));
             if (!$res) {
                 $res = stripslashes($_COOKIE[$data]);
@@ -128,35 +115,24 @@ class RPw_UserOptions {
     }    
     
     private function _deleteDbCookie ($key) {
+        global $wpdb;
         $id = $this->id;
         $key = $this->_normalizeKey($key);
         
         $sql = "DELETE FROM {$this->tableName} WHERE `id` = '{$id}' AND `key` = '$key'";
 
-        $errNo = $this->db->connect();
-        if ( $errNo == 0) {
-            $this->db->getDb()->query($sql);
-            $this->db->disconnect();
-        } else {
-            $this->db->disconnect();
-            throw new Agp_DbConnectException('Cannot establish connection to database.', $errNo);
-        }                
+        $wpdb->query($sql);     
     }        
 
 
     private function _gcDbCookie () {
+        global $wpdb;
         $time = time() - $this->expire;
             
         $sql = "DELETE FROM {$this->tableName} WHERE `access` < '{$time}'";
 
-        $errNo = $this->db->connect();
-        if ( $errNo == 0) {
-            $this->db->getDb()->query($sql);
-            $this->db->disconnect();
-        } else {
-            $this->db->disconnect();
-            throw new Agp_DbConnectException('Cannot establish connection to database.', $errNo);
-        }                
+        $wpdb->query($sql);        
+
     }            
     
     private function _normalizeKey ( $key ) {
