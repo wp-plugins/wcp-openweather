@@ -173,6 +173,9 @@ More information can be found in the section [screenshots](https://wordpress.org
 12. Admin Panel :: Theme Settings
 
 == Changelog ==
+= 1.1.2 =
+* Fixed the issue with the error "Bad Request. Your browser sent a request that this server could not understand. Size of a request header field exceeds server limit. Cookie"
+
 = 1.1.1 =
 * Minor bugfixing
 

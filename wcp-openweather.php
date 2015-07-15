@@ -3,7 +3,7 @@
  * Plugin Name: WCP OpenWeather
  * Plugin URI: https://wordpress.org/plugins/wcp-openweather/
  * Description: The weather forecast plugin based on OpenWeatherMap API that includes various sidebar widgets and shortcodes
- * Version: 1.1.1
+ * Version: 1.1.2
  * Author: Webcodin
  * Author URI: https://profiles.wordpress.org/webcodin/
  * License: GPL2
@@ -44,22 +44,50 @@ if (file_exists(dirname(__FILE__) . '/agp-core/agp-core.php' )) {
 } 
 
 add_action( 'plugins_loaded', 'rpw_activate_plugin' );
-function rpw_activate_plugin() {
-    if (class_exists('Webcodin\WCPOpenWeather\Core\Agp_Autoloader') && !function_exists('RPw')) {
-        $autoloader = Agp_Autoloader::instance();
-        $autoloader->setClassMap(array(
-            __DIR__ => array('classes'),
-            'namespaces' => array(
-                'Webcodin\WCPOpenWeather\Core' => array(
-                    __DIR__ => array('agp-core'),
+if (!function_exists('rpw_install_plugin')) {
+    function rpw_activate_plugin() {
+        if (class_exists('Webcodin\WCPOpenWeather\Core\Agp_Autoloader') && !function_exists('RPw')) {
+            $autoloader = Agp_Autoloader::instance();
+            $autoloader->setClassMap(array(
+                __DIR__ => array('classes'),
+                'namespaces' => array(
+                    'Webcodin\WCPOpenWeather\Core' => array(
+                        __DIR__ => array('agp-core'),
+                    ),
                 ),
-            ),
-        ));
+            ));
 
-        function RPw() {
-            return RPw::instance();
-        }    
+            function RPw() {
+                return RPw::instance();
+            }    
 
-        RPw();                
+            RPw();                
+        }
+    }    
+}
+
+
+register_activation_hook( __FILE__, 'rpw_install_plugin' );
+
+if (!function_exists('rpw_install_plugin')) {
+    function rpw_install_plugin () {
+        global $wpdb;
+        $table_name = $wpdb->prefix . "wcp_useroptions";
+        
+        if($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
+            $sql = "CREATE TABLE " . $table_name . " (
+                    `id` varchar(64) NOT NULL,
+                    `key` varchar(255) NOT NULL,
+                    `data` text,
+                    `access` int(10) unsigned DEFAULT NULL,
+                    UNIQUE KEY `id` (`id`, `key`),
+                    KEY `access` (`access`),
+                    KEY `key` (`key`)
+                );";
+
+            require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+            dbDelta($sql);            
+        }
+        
     }
 }

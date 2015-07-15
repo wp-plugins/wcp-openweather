@@ -153,7 +153,9 @@ class RPw extends Agp_Module {
     public function init () {
         $pluginSettings = RPw()->getSettings()->getPluginSettings();
         if (isset($pluginSettings['expireUserSettings'])) {
+            //$this->settings->getUserOptions()->setExpire($pluginSettings['expireUserSettings']);            
             $this->settings->getUserOptions()->setExpire($pluginSettings['expireUserSettings'] * 86400);
+            $this->settings->getUserOptions()->init();
         }
         $this->processRequest();
     }
