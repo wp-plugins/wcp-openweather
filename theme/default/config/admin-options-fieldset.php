@@ -4,6 +4,8 @@ return array(
         'en_US' => 'English (United States)',
         'ru_RU' => 'Russian (Russia)',
         'uk_UA' => 'Ukrainian (Ukraine)',
-        //'fr_FR' => 'French (France)',        
+        'sq_AL' => 'Albanian (Albania)',
+        'fr_FR' => 'French (France)',
+        'de_DE' => 'German (Germany)',
     ),    
 );

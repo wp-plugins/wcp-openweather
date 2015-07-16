@@ -26,8 +26,22 @@
                     $selected = !empty($args->data[$args->field]) && $args->data[$args->field] == $k;
                     $v = __( $v, 'wcp-openweather' );  
                     $langExists = empty($k) || RPw()->getCurrentTheme()->isLangExists($k);
+                    
+                    $partialLang = RPw()->getCurrentTheme()->isPartialLang($k);
+                    $isPartialLang = !empty($k) && $partialLang;
+                    
+                    $color = '';
+                    if (!$langExists && $partialLang) {
+                        $color = '#ce09e8';
+                    } elseif (!$langExists) {
+                        $color = 'red';
+                    } elseif ($partialLang) {
+                        $color = 'blue';
+                    }
+                    
+                    
             ?>
-                    <option<?php if (!$langExists) : ?> style="color: red;"<?php endif;?> value="<?php echo $k; ?>"<?php selected( $selected );?>><?php echo $v;?><?php echo !$langExists ? ' - ' .__( 'Not supported in the current theme', 'wcp-openweather' ) : ''; ?></option>
+                <option<?php if (!empty($color)) : ?> style="color: <?php echo $color;?>;"<?php endif;?> value="<?php echo $k; ?>"<?php selected( $selected );?>><?php echo $v;?><?php echo $isPartialLang ? " - ({$partialLang}%)" : ''; ?><?php echo !$langExists ? ' - ' .__( 'Not supported in the current theme', 'wcp-openweather' ) : ''; ?></option>
             <?php 
                 endforeach; 
             ?>

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wcp-openweather\n"
-"POT-Creation-Date: 2015-07-14 13:12+0300\n"
-"PO-Revision-Date: 2015-07-14 13:12+0300\n"
+"POT-Creation-Date: 2015-07-16 14:23+0300\n"
+"PO-Revision-Date: 2015-07-16 14:23+0300\n"
 "Last-Translator: - <->\n"
 "Language-Team: Webcodin <info@webcodin.com>\n"
 "Language: en_US\n"
@@ -339,79 +339,91 @@ msgstr ""
 msgid "Ukrainian (Ukraine)"
 msgstr ""
 
-#: config/admin-options-fieldset.php:49
-msgid "mon"
+#: config/admin-options-fieldset.php:45
+msgid "Albanian (Albania)"
 msgstr ""
 
-#: config/admin-options-fieldset.php:50
-msgid "tue"
+#: config/admin-options-fieldset.php:46
+msgid "French (France)"
 msgstr ""
 
-#: config/admin-options-fieldset.php:51
-msgid "wed"
-msgstr ""
-
-#: config/admin-options-fieldset.php:52
-msgid "thu"
-msgstr ""
-
-#: config/admin-options-fieldset.php:53
-msgid "fri"
+#: config/admin-options-fieldset.php:47
+msgid "German (Germany)"
 msgstr ""
 
 #: config/admin-options-fieldset.php:54
-msgid "sat"
+msgid "mon"
 msgstr ""
 
 #: config/admin-options-fieldset.php:55
-msgid "sun"
+msgid "tue"
+msgstr ""
+
+#: config/admin-options-fieldset.php:56
+msgid "wed"
+msgstr ""
+
+#: config/admin-options-fieldset.php:57
+msgid "thu"
 msgstr ""
 
 #: config/admin-options-fieldset.php:58
-msgid "jan"
+msgid "fri"
 msgstr ""
 
 #: config/admin-options-fieldset.php:59
-msgid "feb"
+msgid "sat"
 msgstr ""
 
 #: config/admin-options-fieldset.php:60
-msgid "mar"
-msgstr ""
-
-#: config/admin-options-fieldset.php:61
-msgid "apr"
-msgstr ""
-
-#: config/admin-options-fieldset.php:62
-msgid "may"
+msgid "sun"
 msgstr ""
 
 #: config/admin-options-fieldset.php:63
-msgid "jun"
+msgid "jan"
 msgstr ""
 
 #: config/admin-options-fieldset.php:64
-msgid "jul"
+msgid "feb"
 msgstr ""
 
 #: config/admin-options-fieldset.php:65
-msgid "aug"
+msgid "mar"
 msgstr ""
 
 #: config/admin-options-fieldset.php:66
-msgid "sep"
+msgid "apr"
 msgstr ""
 
 #: config/admin-options-fieldset.php:67
-msgid "oct"
+msgid "may"
 msgstr ""
 
 #: config/admin-options-fieldset.php:68
-msgid "nov"
+msgid "jun"
 msgstr ""
 
 #: config/admin-options-fieldset.php:69
+msgid "jul"
+msgstr ""
+
+#: config/admin-options-fieldset.php:70
+msgid "aug"
+msgstr ""
+
+#: config/admin-options-fieldset.php:71
+msgid "sep"
+msgstr ""
+
+#: config/admin-options-fieldset.php:72
+msgid "oct"
+msgstr ""
+
+#: config/admin-options-fieldset.php:73
+msgid "nov"
+msgstr ""
+
+#: config/admin-options-fieldset.php:74
 msgid "dec"
 msgstr ""
 
@@ -444,7 +456,7 @@ msgstr ""
 msgid "Save Changes"
 msgstr ""
 
-#: templates/admin/options/fields/lang.php:30
+#: templates/admin/options/fields/lang.php:44
 msgid "Not supported in the current theme"
 msgstr ""
 

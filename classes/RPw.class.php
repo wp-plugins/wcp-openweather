@@ -380,6 +380,7 @@ class RPw extends Agp_Module {
                 $forecast = $this->api->getDailyForecast(5);
                 if (!empty($forecast) && $forecast->getCount() > 0) {
                     $forecast->applySettings($settings);
+                    $forecast->applyThemeUrl($this->getCurrentTheme()->getAssetUrl());
                     if (!empty($city_data)) {
                         $forecast->getCity()->setExtendedInfo($city_data);    
                     }                    

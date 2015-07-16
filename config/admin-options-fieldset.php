@@ -42,8 +42,13 @@ return array(
         'en_US' => __('English (United States)', 'wcp-openweather'),
         'ru_RU' => __('Russian (Russia)', 'wcp-openweather'),
         'uk_UA' => __('Ukrainian (Ukraine)', 'wcp-openweather'),
-//        'fr_FR' => __('French (France)', 'wcp-openweather'),
-//        'de_DE' => __('German (Germany)', 'wcp-openweather'),
+        'sq_AL' => __('Albanian (Albania)', 'wcp-openweather'),
+        'fr_FR' => __('French (France)', 'wcp-openweather'),
+        //'de_DE' => __('German (Germany)', 'wcp-openweather'),
+    ),
+    'partial_languages' => array(
+        'fr_FR' => 65, 
+        'de_DE' => 60,
     ),
     'dayofweeks' => array (
         __('mon', 'wcp-openweather'),

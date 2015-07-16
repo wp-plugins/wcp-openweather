@@ -102,7 +102,7 @@ class RPw_Settings extends Agp_SettingsAbstract {
     
     public static function getLanguages() {
         $languages = self::$_instance->getFieldSet('languages');
-        asort($languages);
+        natsort($languages);
         $result = array('' => __('Auto Detect', 'wcp-openweather')) + $languages; 
         return $result;        
     }            

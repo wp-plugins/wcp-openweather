@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wcp-openweather\n"
-"POT-Creation-Date: 2015-07-14 13:12+0300\n"
-"PO-Revision-Date: 2015-07-14 13:16+0300\n"
+"POT-Creation-Date: 2015-07-16 14:23+0300\n"
+"PO-Revision-Date: 2015-07-16 14:23+0300\n"
 "Last-Translator: - <->\n"
 "Language-Team: Webcodin <info@webcodin.com>\n"
 "Language: ru_RU\n"
@@ -345,79 +345,91 @@ msgstr "Русский (Россия)"
 msgid "Ukrainian (Ukraine)"
 msgstr "Украинский (Украина)"
 
-#: config/admin-options-fieldset.php:49
+#: config/admin-options-fieldset.php:45
+msgid "Albanian (Albania)"
+msgstr "Албанский (Албания)"
+
+#: config/admin-options-fieldset.php:46
+msgid "French (France)"
+msgstr "Французский (Франция)"
+
+#: config/admin-options-fieldset.php:47
+msgid "German (Germany)"
+msgstr "Немецкий (Германия)"
+
+#: config/admin-options-fieldset.php:54
 msgid "mon"
 msgstr "пн"
 
-#: config/admin-options-fieldset.php:50
+#: config/admin-options-fieldset.php:55
 msgid "tue"
 msgstr "вт"
 
-#: config/admin-options-fieldset.php:51
+#: config/admin-options-fieldset.php:56
 msgid "wed"
 msgstr "ср"
 
-#: config/admin-options-fieldset.php:52
+#: config/admin-options-fieldset.php:57
 msgid "thu"
 msgstr "чт"
 
-#: config/admin-options-fieldset.php:53
+#: config/admin-options-fieldset.php:58
 msgid "fri"
 msgstr "пт"
 
-#: config/admin-options-fieldset.php:54
+#: config/admin-options-fieldset.php:59
 msgid "sat"
 msgstr "сб"
 
-#: config/admin-options-fieldset.php:55
+#: config/admin-options-fieldset.php:60
 msgid "sun"
 msgstr "вс"
 
-#: config/admin-options-fieldset.php:58
+#: config/admin-options-fieldset.php:63
 msgid "jan"
 msgstr "янв"
 
-#: config/admin-options-fieldset.php:59
+#: config/admin-options-fieldset.php:64
 msgid "feb"
 msgstr "фев"
 
-#: config/admin-options-fieldset.php:60
+#: config/admin-options-fieldset.php:65
 msgid "mar"
 msgstr "мар"
 
-#: config/admin-options-fieldset.php:61
+#: config/admin-options-fieldset.php:66
 msgid "apr"
 msgstr "апр"
 
-#: config/admin-options-fieldset.php:62
+#: config/admin-options-fieldset.php:67
 msgid "may"
 msgstr "май"
 
-#: config/admin-options-fieldset.php:63
+#: config/admin-options-fieldset.php:68
 msgid "jun"
 msgstr "июн"
 
-#: config/admin-options-fieldset.php:64
+#: config/admin-options-fieldset.php:69
 msgid "jul"
 msgstr "июл"
 
-#: config/admin-options-fieldset.php:65
+#: config/admin-options-fieldset.php:70
 msgid "aug"
 msgstr "авг"
 
-#: config/admin-options-fieldset.php:66
+#: config/admin-options-fieldset.php:71
 msgid "sep"
 msgstr "сен"
 
-#: config/admin-options-fieldset.php:67
+#: config/admin-options-fieldset.php:72
 msgid "oct"
 msgstr "окт"
 
-#: config/admin-options-fieldset.php:68
+#: config/admin-options-fieldset.php:73
 msgid "nov"
 msgstr "ноя"
 
-#: config/admin-options-fieldset.php:69
+#: config/admin-options-fieldset.php:74
 msgid "dec"
 msgstr "дек"
 
@@ -458,7 +470,7 @@ msgstr ""
 msgid "Save Changes"
 msgstr "Сохранить"
 
-#: templates/admin/options/fields/lang.php:30
+#: templates/admin/options/fields/lang.php:44
 msgid "Not supported in the current theme"
 msgstr "Не поддерживается в текущей теме"
 
@@ -469,6 +481,9 @@ msgstr "WCP OpenWeather шорткод"
 #: templates/admin/constructor/layout.php:21
 msgid "Add"
 msgstr "Добавить"
+
+#~ msgid "Partial translation"
+#~ msgstr "Частичный перевод"
 
 #~ msgid "Ooops! Nothing was found!"
 #~ msgstr "Упс! Ничего не найдено!"

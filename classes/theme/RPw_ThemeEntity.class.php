@@ -117,6 +117,13 @@ class RPw_ThemeEntity extends Agp_Module {
         }
     }
     
+    public function isPartialLang( $lang ) {
+        $languages = RPw()->getSettings()->getFieldSet('partial_languages');
+        if (!empty($languages) && array_key_exists($lang, $languages)) {
+            return $languages[$lang];    
+        }
+    }    
+    
     public function getId() {
         return $this->id;
     }

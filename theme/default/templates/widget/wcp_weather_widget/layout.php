@@ -37,7 +37,7 @@
         <div class="wcp-openweather-header-wrapper">
             <div class="wcp-openweather-container">
                 <div class="wcp-openweather-day-wrapper">
-                    <span class="wcp-openweather-day">
+                    <span class="wcp-openweather-day wcp-openweather-primary-color">
                         <?php echo $currentDate; ?>
                     </span>
                 </div>

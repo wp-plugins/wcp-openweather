@@ -23,20 +23,20 @@
         <div class="wcp-openweather-now-details">
             <div class="wcp-openweather-now-details-row">
                 <div class="wcp-openweather-now-details-row-content">
-                    <span class="wcp-openweather-now-details-title"><?php _e('Wind', 'wcp-openweather-theme'); ?></span>            
-                    <span class="wcp-openweather-now-details-value"><?php echo $item->getWindSpeed();?><?php echo !empty($windDeg) ? ', '.$windDeg : '';?></span>
+                    <span class="wcp-openweather-now-details-title wcp-openweather-primary-color"><?php _e('Wind', 'wcp-openweather-theme'); ?></span>            
+                    <span class="wcp-openweather-now-details-value wcp-openweather-primary-color"><?php echo $item->getWindSpeed();?><?php echo !empty($windDeg) ? ', '.$windDeg : '';?></span>
                 </div>
             </div>
             <div class="wcp-openweather-now-details-row">
                 <div class="wcp-openweather-now-details-row-content">
-                    <span class="wcp-openweather-now-details-title"><?php _e('Humidity', 'wcp-openweather-theme'); ?></span>
-                    <span class="wcp-openweather-now-details-value"><?php echo $item->getHumidity();?></span>
+                    <span class="wcp-openweather-now-details-title wcp-openweather-primary-color"><?php _e('Humidity', 'wcp-openweather-theme'); ?></span>
+                    <span class="wcp-openweather-now-details-value wcp-openweather-primary-color"><?php echo $item->getHumidity();?></span>
                 </div>
             </div>
             <div class="wcp-openweather-now-details-row">
                 <div class="wcp-openweather-now-details-row-content">
-                    <span class="wcp-openweather-now-details-title"><?php _e('Pressure', 'wcp-openweather-theme'); ?></span>
-                    <span class="wcp-openweather-now-details-value"><?php echo $item->getPressure();?></span>
+                    <span class="wcp-openweather-now-details-title wcp-openweather-primary-color"><?php _e('Pressure', 'wcp-openweather-theme'); ?></span>
+                    <span class="wcp-openweather-now-details-value wcp-openweather-primary-color"><?php echo $item->getPressure();?></span>
                 </div>
             </div>
         </div>
