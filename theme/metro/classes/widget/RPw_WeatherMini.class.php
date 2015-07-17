@@ -1,0 +1,20 @@
+<?php
+namespace Webcodin\WCPOpenWeather\Theme\MetroTheme;
+
+use Webcodin\WCPOpenWeather\Theme\MetroTheme\RPw_Theme;
+
+class RPw_WeatherMini extends RPw_Weather {
+    
+    public $widgetTag = 'wcp_weather_mini_widget';    
+    
+	/**
+	 * Sets up the widgets name etc
+	 */
+	public function __construct() {
+		$widget_ops = array( 'description' => __( "Adds mini weather to sidebar", 'wcp-openweather-theme') );
+		\WP_Widget::__construct( $this->widgetTag, __('WCP Weather Mini', 'wcp-openweather-theme'), $widget_ops);
+	}
+    
+}
+
+    
