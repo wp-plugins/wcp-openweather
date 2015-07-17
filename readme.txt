@@ -48,7 +48,8 @@ Currently, we are working on the plugin multilanguage functionality. In this plu
 * Russian;
 * Ukrainian;
 * Albanian;
-* French.
+* French;
+* Dutch (Belgium).
 
 Multilanguage functionality has limitation based on [OpenWeatherMap API](http://openweathermap.org/forecast16#multi) languages support, i.e. city name has no translation for city name by default and description of weather conditions have translation only for languages form [OpenWeatherMap](http://openweathermap.org/forecast16#multi) API list.
 
@@ -175,6 +176,8 @@ More information can be found in the section [screenshots](https://wordpress.org
 12. Admin Panel :: Theme Settings
 
 == Changelog ==
+= 1.1.7 =
+* Added translation to the Dutch (Belgium) language
 
 = 1.1.6 =
 * Added translations to the Albanian and French languages

@@ -1,29 +1,28 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wcp-openweather-theme\n"
-"POT-Creation-Date: 2015-07-15 18:53+0300\n"
-"PO-Revision-Date: 2015-07-15 18:54+0300\n"
+"POT-Creation-Date: 2015-07-17 15:44+0300\n"
+"PO-Revision-Date: 2015-07-17 16:08+0300\n"
 "Last-Translator: - <->\n"
 "Language-Team: Webcodin <info@webcodin.com>\n"
-"Language: ru_RU\n"
+"Language: nl_BE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n:1,2;_x:1,2c;_ex:1,2c\n"
 "X-Poedit-Basepath: ..\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: classes/RPw_Theme.class.php:40
-msgid "Metro Theme"
-msgstr "Метро"
+msgid "Default Theme"
+msgstr "Standaard thema"
 
 #: classes/widget/RPw_Weather.class.php:14
 msgid "Adds weather to sidebar"
-msgstr "Добавляет погоду в боковую панель"
+msgstr "Adds weather to sidebar"
 
 #: classes/widget/RPw_Weather.class.php:15
 msgid "WCP Weather"
@@ -31,19 +30,19 @@ msgstr "WCP Weather"
 
 #: classes/widget/RPw_Weather.class.php:106
 msgid "Title"
-msgstr "Заголовок"
+msgstr "Titel"
 
 #: classes/widget/RPw_Weather.class.php:115
 msgid "Show current weather"
-msgstr "Текущий прогноз"
+msgstr "Toon het huidige weer"
 
 #: classes/widget/RPw_Weather.class.php:122
 msgid "Show 5 day forecast"
-msgstr "Пятидневный прогноз"
+msgstr "Toon voorspelling voor 5 dagen"
 
 #: classes/widget/RPw_Weather.class.php:128
 msgid "City"
-msgstr "Город"
+msgstr "Plaatsnaam"
 
 #: classes/widget/RPw_Weather.class.php:130
 msgid ""
@@ -51,35 +50,35 @@ msgid ""
 "title=\"http://www.openweathermap.com/\" target=\"_blank\">www."
 "openweathermap.com</a>."
 msgstr ""
-"Вы можете найти ваш город на <a href=\"http://www.openweathermap.com/\" "
-"title=\"http://www.openweathermap.com/\" target=\"_blank\">www."
-"openweathermap.com</a>."
+"Je kan je plaatsnaam terugvinden op <a href=\"http://www.openweathermap.com/"
+"\" title=\"http://www.openweathermap.com/\" target=\"_blank\">www."
+"openweathermap.com.</a>"
 
 #: classes/widget/RPw_Weather.class.php:146
 msgid "Temperature"
-msgstr "Температура"
+msgstr "Temperatuur"
 
 #: classes/widget/RPw_Weather.class.php:165
 msgid "Wind Speed"
-msgstr "Скорость ветра"
+msgstr "Windsnelheid"
 
 #: classes/widget/RPw_Weather.class.php:184
 #: templates/shortcode/wcp_weather/forecast.php:15
 #: templates/shortcode/wcp_weather/now.php:38
 msgid "Pressure"
-msgstr "Давление"
+msgstr "Luchtdruk"
 
 #: classes/widget/RPw_Weather.class.php:200
 msgid "Enable user settings"
-msgstr "Разрешить  опции пользователя"
+msgstr "Gebruikersopties inschakelen"
 
 #: classes/widget/RPw_Weather.class.php:207
 msgid "Hide description of the weather conditions"
-msgstr "Скрыть описание погодных условий"
+msgstr "Verberg omschrijving van de weersomstandigheden"
 
 #: classes/widget/RPw_WeatherMini.class.php:14
 msgid "Adds mini weather to sidebar"
-msgstr "Добавляет мини-погоду в боковую панель"
+msgstr "Mini-weer toevoegen aan de sidebar"
 
 #: classes/widget/RPw_WeatherMini.class.php:15
 msgid "WCP Weather Mini"
@@ -87,66 +86,59 @@ msgstr "WCP Weather Mini"
 
 #: config/admin-options-fields.php:12
 msgid "Background Color"
-msgstr "Цвет фона"
+msgstr "Achtergrondkleur"
 
 #: config/admin-options-fields.php:22
 msgid "Text Color"
-msgstr "Цвет текста"
+msgstr "Tekstkleur"
 
 #: templates/widget/wcp_weather_widget/nodata.php:3
 #: templates/widget/wcp_weather_mini_widget/nodata.php:3
 #: templates/shortcode/wcp_weather/nodata.php:3
 msgid "Ooops! Nothing was found!"
-msgstr "Упс! Ничего не найдено!"
+msgstr "Ooops! Er werd niets gevonden!"
 
 #: templates/widget/wcp_weather_mini_widget/forecast.php:10
 #: templates/shortcode/wcp_weather/forecast.php:10
 msgid "Day"
-msgstr "День"
+msgstr "Dag"
 
 #: templates/widget/wcp_weather_mini_widget/forecast.php:11
 #: templates/shortcode/wcp_weather/forecast.php:11
 msgid "Cond."
-msgstr "Усл."
+msgstr "Cond."
 
 #: templates/widget/wcp_weather_mini_widget/forecast.php:12
 #: templates/shortcode/wcp_weather/forecast.php:12
 msgid "Temp."
-msgstr "Темп."
+msgstr "Temp."
 
 #: templates/shortcode/wcp_weather/forecast.php:13
 #: templates/shortcode/wcp_weather/now.php:26
 msgid "Wind"
-msgstr "Ветер"
+msgstr "Wind"
 
 #: templates/shortcode/wcp_weather/forecast.php:14
 #: templates/shortcode/wcp_weather/now.php:32
 msgid "Humidity"
-msgstr "Влажность"
+msgstr "Vochtigheid"
 
 #: templates/shortcode/wcp_weather/forecast.php:15
 msgid "Pres."
-msgstr "Давл."
+msgstr "Luchtdr."
 
-# You can change current theme here.
 #: templates/admin/options/layout.php:13
 msgid ""
 "You can change current theme <a href=\"/wp-admin/admin.php?page=wcp-"
 "weather&tab=plugin-settings\">here</a>."
 msgstr ""
-"Вы можете изменить текущую тему <a href=\"/wp-admin/admin.php?page=wcp-"
-"weather&tab=plugin-settings\">тут</a>."
+"<a href=\"/wp-admin/admin.php?page=wcp-weather&tab=plugin-settings\">Hier</"
+"a> kan je het huidige thema wijzigen."
 
 #: templates/admin/options/layout.php:29
 msgid "Save Changes"
-msgstr "Сохранить"
+msgstr "Wijzigingen opslaan"
 
 #: templates/admin/options/layout.php:30
 msgid "Reset to Default"
-msgstr "Настройки по умолчанию"
-
-#~ msgid "Theme Settings"
-#~ msgstr "Настройки темы"
-
-#~ msgid "Conditions"
-#~ msgstr "Условия"
+msgstr "Standaardwaarden terugzetten"

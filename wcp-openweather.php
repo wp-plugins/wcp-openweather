@@ -3,7 +3,7 @@
  * Plugin Name: WCP OpenWeather
  * Plugin URI: https://wordpress.org/plugins/wcp-openweather/
  * Description: The weather forecast plugin based on OpenWeatherMap API that includes various sidebar widgets and shortcodes
- * Version: 1.1.6
+ * Version: 1.1.7
  * Author: Webcodin
  * Author URI: https://profiles.wordpress.org/webcodin/
  * License: GPL2

@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wcp-openweather\n"
-"POT-Creation-Date: 2015-07-16 14:23+0300\n"
-"PO-Revision-Date: 2015-07-16 16:35+0300\n"
+"POT-Creation-Date: 2015-07-17 16:06+0300\n"
+"PO-Revision-Date: 2015-07-17 16:06+0300\n"
 "Last-Translator: - <->\n"
 "Language-Team: Webcodin <info@webcodin.com>\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.2\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n:1,2;_x:1,2c;_ex:1,2c\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -27,7 +27,8 @@ msgstr "Détection Automatique"
 msgid "Add new WCP OpenWeather shortcode"
 msgstr "Ajouter un nouveau WCP OpenWeather shortcode"
 
-#: classes/persistence/RPw_Convertor.class.php:103 classes/persistence/RPw_Convertor.class.php:119
+#: classes/persistence/RPw_Convertor.class.php:103
+#: classes/persistence/RPw_Convertor.class.php:119
 msgid "N"
 msgstr "N"
 
@@ -118,11 +119,13 @@ msgstr "Nom De La Ville"
 # You can find you city name on www.openweathermap.com.
 #: config/admin-options-fields.php:33
 msgid ""
-"You can find you city name on <a href=\"http://www.openweathermap.com/\" title=\"http://www.openweathermap.com/\" target=\"_blank\">www."
+"You can find you city name on <a href=\"http://www.openweathermap.com/\" "
+"title=\"http://www.openweathermap.com/\" target=\"_blank\">www."
 "openweathermap.com</a>."
 msgstr ""
-"Vous pouvez vous trouver le nom de la ville sur <a href=\"http://www.openweathermap.com/\" title=\"http://www.openweathermap.com/\" "
-"target=\"_blank\">www.openweathermap.com</a>."
+"Vous pouvez vous trouver le nom de la ville sur <a href=\"http://www."
+"openweathermap.com/\" title=\"http://www.openweathermap.com/\" target="
+"\"_blank\">www.openweathermap.com</a>."
 
 #: config/admin-options-fields.php:45
 msgid "Temperature"
@@ -191,11 +194,12 @@ msgstr "Clé API"
 # How to get API key you can see here.
 #: config/admin-options-fields.php:164
 msgid ""
-"How to get API key you can see <a href=\"http://openweathermap.org/appid\" title=\"http://openweathermap.org/appid\" target=\"_blank"
-"\">here</a>."
+"How to get API key you can see <a href=\"http://openweathermap.org/appid\" "
+"title=\"http://openweathermap.org/appid\" target=\"_blank\">here</a>."
 msgstr ""
-"Comment faire pour obtenir la clé API que vous pouvez voir <a href=\"http://openweathermap.org/appid\" title=\"http://openweathermap.org/"
-"appid\" target=\"_blank\">ici</a>."
+"Comment faire pour obtenir la clé API que vous pouvez voir <a href=\"http://"
+"openweathermap.org/appid\" title=\"http://openweathermap.org/appid\" target="
+"\"_blank\">ici</a>."
 
 #: config/admin-options-tabs.php:4
 msgid "Weather"
@@ -329,103 +333,79 @@ msgstr "12h"
 msgid "24h"
 msgstr "24h"
 
-#: config/admin-options-fieldset.php:42
-msgid "English (United States)"
-msgstr "Anglais (États Unis)"
-
-#: config/admin-options-fieldset.php:43
-msgid "Russian (Russia)"
-msgstr "Russe (Russie)"
-
-#: config/admin-options-fieldset.php:44
-msgid "Ukrainian (Ukraine)"
-msgstr "Ukrainien (Ukraine)"
-
-#: config/admin-options-fieldset.php:45
-msgid "Albanian (Albania)"
-msgstr "Albanais (Albanie)"
-
-#: config/admin-options-fieldset.php:46
-msgid "French (France)"
-msgstr "Français (France)"
-
-#: config/admin-options-fieldset.php:47
-msgid "German (Germany)"
-msgstr "Allemand (Allemagne)"
-
-#: config/admin-options-fieldset.php:54
+#: config/admin-options-fieldset.php:55
 msgid "mon"
 msgstr "lun"
 
-#: config/admin-options-fieldset.php:55
+#: config/admin-options-fieldset.php:56
 msgid "tue"
 msgstr "mar"
 
-#: config/admin-options-fieldset.php:56
+#: config/admin-options-fieldset.php:57
 msgid "wed"
 msgstr "mer"
 
-#: config/admin-options-fieldset.php:57
+#: config/admin-options-fieldset.php:58
 msgid "thu"
 msgstr "jeu"
 
-#: config/admin-options-fieldset.php:58
+#: config/admin-options-fieldset.php:59
 msgid "fri"
 msgstr "ven"
 
-#: config/admin-options-fieldset.php:59
+#: config/admin-options-fieldset.php:60
 msgid "sat"
 msgstr "sam"
 
-#: config/admin-options-fieldset.php:60
+#: config/admin-options-fieldset.php:61
 msgid "sun"
 msgstr "dim"
 
-#: config/admin-options-fieldset.php:63
+#: config/admin-options-fieldset.php:64
 msgid "jan"
 msgstr "janv"
 
-#: config/admin-options-fieldset.php:64
+#: config/admin-options-fieldset.php:65
 msgid "feb"
 msgstr "févr"
 
-#: config/admin-options-fieldset.php:65
+#: config/admin-options-fieldset.php:66
 msgid "mar"
 msgstr "mars"
 
-#: config/admin-options-fieldset.php:66
+#: config/admin-options-fieldset.php:67
 msgid "apr"
 msgstr "avril"
 
-#: config/admin-options-fieldset.php:67
+#: config/admin-options-fieldset.php:68
 msgid "may"
 msgstr "mai"
 
-#: config/admin-options-fieldset.php:68
+#: config/admin-options-fieldset.php:69
 msgid "jun"
 msgstr "juin"
 
-#: config/admin-options-fieldset.php:69
+#: config/admin-options-fieldset.php:70
 msgid "jul"
 msgstr "juil"
 
-#: config/admin-options-fieldset.php:70
+#: config/admin-options-fieldset.php:71
 msgid "aug"
 msgstr "août"
 
-#: config/admin-options-fieldset.php:71
+#: config/admin-options-fieldset.php:72
 msgid "sep"
 msgstr "sept"
 
-#: config/admin-options-fieldset.php:72
+#: config/admin-options-fieldset.php:73
 msgid "oct"
 msgstr "oct"
 
-#: config/admin-options-fieldset.php:73
+#: config/admin-options-fieldset.php:74
 msgid "nov"
 msgstr "nov"
 
-#: config/admin-options-fieldset.php:74
+#: config/admin-options-fieldset.php:75
 msgid "dec"
 msgstr "déc"
 
@@ -444,17 +424,24 @@ msgstr "Réinitialiser"
 # More information about the plugin you can find on the plugin page in the FAQ and Screenshots sections. Live demo you can find on our site.
 #: templates/admin/options/layout.php:20
 msgid ""
-"More information about the plugin you can find on the <a href=\"https://wordpress.org/plugins/wcp-openweather/\" target=\"_blank\" title="
-"\"wordpress.org\">plugin page</a> in the <a href=\"https://wordpress.org/plugins/wcp-openweather/faq/\" target=\"_blank\" title=\"FAQ"
-"\">FAQ</a> and <a href=\"https://wordpress.org/plugins/wcp-openweather/screenshots/\" target=\"_blank\" title=\"Screenshots"
-"\">Screenshots</a> sections. <strong>Live demo</strong> you can find on <a href=\"http://wpdemo.webcodin.com/weather-forecast/\" target="
-"\"_blank\" title=\"Live Demo\">our site</a>."
+"More information about the plugin you can find on the <a href=\"https://"
+"wordpress.org/plugins/wcp-openweather/\" target=\"_blank\" title=\"wordpress."
+"org\">plugin page</a> in the <a href=\"https://wordpress.org/plugins/wcp-"
+"openweather/faq/\" target=\"_blank\" title=\"FAQ\">FAQ</a> and <a href="
+"\"https://wordpress.org/plugins/wcp-openweather/screenshots/\" target="
+"\"_blank\" title=\"Screenshots\">Screenshots</a> sections. <strong>Live "
+"demo</strong> you can find on <a href=\"http://wpdemo.webcodin.com/weather-"
+"forecast/\" target=\"_blank\" title=\"Live Demo\">our site</a>."
 msgstr ""
-"Plus d'informations sur le plugin vous pouvez trouver sur la <a href=\"https://wordpress.org/plugins/wcp-openweather/\" target=\"_blank\" "
-"title=\"wordpress.org\">page du plugin</a> dans les <a href=\"https://wordpress.org/plugins/wcp-openweather/faq/\" target=\"_blank\" "
-"title=\"FAQ\">FAQ</a> et <a href=\"https://wordpress.org/plugins/wcp-openweather/screenshots/\" target=\"_blank\" title=\"Captures d'écran"
-"\">Captures d'écran</a> sections. <strong>Démonstration en direct</strong> vous pouvez trouver sur <a href=\"http://wpdemo.webcodin.com/"
-"weather-forecast/\" target=\"_blank\" title=\"Démonstration en direct\">notre site</a>."
+"Plus d'informations sur le plugin vous pouvez trouver sur la <a href="
+"\"https://wordpress.org/plugins/wcp-openweather/\" target=\"_blank\" title="
+"\"wordpress.org\">page du plugin</a> dans les <a href=\"https://wordpress."
+"org/plugins/wcp-openweather/faq/\" target=\"_blank\" title=\"FAQ\">FAQ</a> "
+"et <a href=\"https://wordpress.org/plugins/wcp-openweather/screenshots/\" "
+"target=\"_blank\" title=\"Captures d'écran\">Captures d'écran</a> sections. "
+"<strong>Démonstration en direct</strong> vous pouvez trouver sur <a href="
+"\"http://wpdemo.webcodin.com/weather-forecast/\" target=\"_blank\" title="
+"\"Démonstration en direct\">notre site</a>."
 
 #: templates/admin/options/layout.php:41
 msgid "Save Changes"
@@ -471,3 +458,21 @@ msgstr "WCP OpenWeather Shortcode"
 #: templates/admin/constructor/layout.php:21
 msgid "Add"
 msgstr "Ajouter"
+
+#~ msgid "English (United States)"
+#~ msgstr "Anglais (États Unis)"
+
+#~ msgid "Russian (Russia)"
+#~ msgstr "Russe (Russie)"
+
+#~ msgid "Ukrainian (Ukraine)"
+#~ msgstr "Ukrainien (Ukraine)"
+
+#~ msgid "Albanian (Albania)"
+#~ msgstr "Albanais (Albanie)"
+
+#~ msgid "French (France)"
+#~ msgstr "Français (France)"
+
+#~ msgid "German (Germany)"
+#~ msgstr "Allemand (Allemagne)"

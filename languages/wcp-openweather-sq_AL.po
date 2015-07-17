@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wcp-openweather\n"
-"POT-Creation-Date: 2015-07-16 14:23+0300\n"
-"PO-Revision-Date: 2015-07-16 16:39+0300\n"
+"POT-Creation-Date: 2015-07-17 15:43+0300\n"
+"PO-Revision-Date: 2015-07-17 16:07+0300\n"
 "Last-Translator: - <->\n"
 "Language-Team: Webcodin <info@webcodin.com>\n"
 "Language: sq_AL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.2\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n:1,2;_x:1,2c;_ex:1,2c\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -27,7 +27,8 @@ msgstr "Zbulim automatik"
 msgid "Add new WCP OpenWeather shortcode"
 msgstr "Shtoni nje kod te ri te shkurtur per WCP OpenWeather"
 
-#: classes/persistence/RPw_Convertor.class.php:103 classes/persistence/RPw_Convertor.class.php:119
+#: classes/persistence/RPw_Convertor.class.php:103
+#: classes/persistence/RPw_Convertor.class.php:119
 msgid "N"
 msgstr "N"
 
@@ -118,11 +119,13 @@ msgstr "Qyteti"
 # You can find you city name on www.openweathermap.com.
 #: config/admin-options-fields.php:33
 msgid ""
-"You can find you city name on <a href=\"http://www.openweathermap.com/\" title=\"http://www.openweathermap.com/\" target=\"_blank\">www."
+"You can find you city name on <a href=\"http://www.openweathermap.com/\" "
+"title=\"http://www.openweathermap.com/\" target=\"_blank\">www."
 "openweathermap.com</a>."
 msgstr ""
-"Ju mund ta gjeni qyetetin tuaj ne <a href=\"http://www.openweathermap.com/\" title=\"http://www.openweathermap.com/\" target=\"_blank"
-"\">www.openweathermap.com</a>."
+"Ju mund ta gjeni qyetetin tuaj ne <a href=\"http://www.openweathermap.com/\" "
+"title=\"http://www.openweathermap.com/\" target=\"_blank\">www."
+"openweathermap.com</a>."
 
 #: config/admin-options-fields.php:45
 msgid "Temperature"
@@ -191,11 +194,12 @@ msgstr "Celesi API"
 # How to get API key you can see here.
 #: config/admin-options-fields.php:164
 msgid ""
-"How to get API key you can see <a href=\"http://openweathermap.org/appid\" title=\"http://openweathermap.org/appid\" target=\"_blank"
-"\">here</a>."
+"How to get API key you can see <a href=\"http://openweathermap.org/appid\" "
+"title=\"http://openweathermap.org/appid\" target=\"_blank\">here</a>."
 msgstr ""
-"<a href=\"http://openweathermap.org/appid\" title=\"http://openweathermap.org/appid\" target=\"_blank\">Ketu</a> mund te mesoni sesi te "
-"perdorni celesin API"
+"<a href=\"http://openweathermap.org/appid\" title=\"http://openweathermap."
+"org/appid\" target=\"_blank\">Ketu</a> mund te mesoni sesi te perdorni "
+"celesin API"
 
 #: config/admin-options-tabs.php:4
 msgid "Weather"
@@ -329,103 +333,79 @@ msgstr "12 ore"
 msgid "24h"
 msgstr "24 ore"
 
-#: config/admin-options-fieldset.php:42
-msgid "English (United States)"
-msgstr "Anglisht (SHBA)"
-
-#: config/admin-options-fieldset.php:43
-msgid "Russian (Russia)"
-msgstr "Rusisht (Rusi)"
-
-#: config/admin-options-fieldset.php:44
-msgid "Ukrainian (Ukraine)"
-msgstr "Ukrainisht (Ukrainë)"
-
-#: config/admin-options-fieldset.php:45
-msgid "Albanian (Albania)"
-msgstr "Shqiptar (Shqipëri)"
-
-#: config/admin-options-fieldset.php:46
-msgid "French (France)"
-msgstr "Frëngjisht (Francë)"
-
-#: config/admin-options-fieldset.php:47
-msgid "German (Germany)"
-msgstr "Gjermanisht (Gjermani)"
-
-#: config/admin-options-fieldset.php:54
+#: config/admin-options-fieldset.php:55
 msgid "mon"
 msgstr "hen"
 
-#: config/admin-options-fieldset.php:55
+#: config/admin-options-fieldset.php:56
 msgid "tue"
 msgstr "mar"
 
-#: config/admin-options-fieldset.php:56
+#: config/admin-options-fieldset.php:57
 msgid "wed"
 msgstr "mer"
 
-#: config/admin-options-fieldset.php:57
+#: config/admin-options-fieldset.php:58
 msgid "thu"
 msgstr "enj"
 
-#: config/admin-options-fieldset.php:58
+#: config/admin-options-fieldset.php:59
 msgid "fri"
 msgstr "pre"
 
-#: config/admin-options-fieldset.php:59
+#: config/admin-options-fieldset.php:60
 msgid "sat"
 msgstr "sht"
 
-#: config/admin-options-fieldset.php:60
+#: config/admin-options-fieldset.php:61
 msgid "sun"
 msgstr "dje"
 
-#: config/admin-options-fieldset.php:63
+#: config/admin-options-fieldset.php:64
 msgid "jan"
 msgstr "jan"
 
-#: config/admin-options-fieldset.php:64
+#: config/admin-options-fieldset.php:65
 msgid "feb"
 msgstr "shk"
 
-#: config/admin-options-fieldset.php:65
+#: config/admin-options-fieldset.php:66
 msgid "mar"
 msgstr "mar"
 
-#: config/admin-options-fieldset.php:66
+#: config/admin-options-fieldset.php:67
 msgid "apr"
 msgstr "pri"
 
-#: config/admin-options-fieldset.php:67
+#: config/admin-options-fieldset.php:68
 msgid "may"
 msgstr "maj"
 
-#: config/admin-options-fieldset.php:68
+#: config/admin-options-fieldset.php:69
 msgid "jun"
 msgstr "qer"
 
-#: config/admin-options-fieldset.php:69
+#: config/admin-options-fieldset.php:70
 msgid "jul"
 msgstr "kor"
 
-#: config/admin-options-fieldset.php:70
+#: config/admin-options-fieldset.php:71
 msgid "aug"
 msgstr "gus"
 
-#: config/admin-options-fieldset.php:71
+#: config/admin-options-fieldset.php:72
 msgid "sep"
 msgstr "sht"
 
-#: config/admin-options-fieldset.php:72
+#: config/admin-options-fieldset.php:73
 msgid "oct"
 msgstr "tet"
 
-#: config/admin-options-fieldset.php:73
+#: config/admin-options-fieldset.php:74
 msgid "nov"
 msgstr "nen"
 
-#: config/admin-options-fieldset.php:74
+#: config/admin-options-fieldset.php:75
 msgid "dec"
 msgstr "dhj"
 
@@ -444,17 +424,24 @@ msgstr "Rikthejeni ne gjendjen fillestare"
 # More information about the plugin you can find on the plugin page in the FAQ and Screenshots sections. Live demo you can find on our site.
 #: templates/admin/options/layout.php:20
 msgid ""
-"More information about the plugin you can find on the <a href=\"https://wordpress.org/plugins/wcp-openweather/\" target=\"_blank\" title="
-"\"wordpress.org\">plugin page</a> in the <a href=\"https://wordpress.org/plugins/wcp-openweather/faq/\" target=\"_blank\" title=\"FAQ"
-"\">FAQ</a> and <a href=\"https://wordpress.org/plugins/wcp-openweather/screenshots/\" target=\"_blank\" title=\"Screenshots"
-"\">Screenshots</a> sections. <strong>Live demo</strong> you can find on <a href=\"http://wpdemo.webcodin.com/weather-forecast/\" target="
-"\"_blank\" title=\"Live Demo\">our site</a>."
+"More information about the plugin you can find on the <a href=\"https://"
+"wordpress.org/plugins/wcp-openweather/\" target=\"_blank\" title=\"wordpress."
+"org\">plugin page</a> in the <a href=\"https://wordpress.org/plugins/wcp-"
+"openweather/faq/\" target=\"_blank\" title=\"FAQ\">FAQ</a> and <a href="
+"\"https://wordpress.org/plugins/wcp-openweather/screenshots/\" target="
+"\"_blank\" title=\"Screenshots\">Screenshots</a> sections. <strong>Live "
+"demo</strong> you can find on <a href=\"http://wpdemo.webcodin.com/weather-"
+"forecast/\" target=\"_blank\" title=\"Live Demo\">our site</a>."
 msgstr ""
-"Me shume informacione mbi kete plugin mund ta gjeni ne <a href=\"https://wordpress.org/plugins/wcp-openweather/\" target=\"_blank\" title="
-"\"wordpress.org\">faqen e tij</a>, me ne detaje ne <a href=\"https://wordpress.org/plugins/wcp-openweather/faq/\" target=\"_blank\" title="
-"\"FAQ\">PEP</a> dhe sektorin e <a href=\"https://wordpress.org/plugins/wcp-openweather/screenshots/\" target=\"_blank\" title="
-"\"Screenshots\">fotove prezantuese</a>. Ju mund ta shikoni kete plugin <a href=\"http://wpdemo.webcodin.com/weather-forecast/\" target="
-"\"_blank\" title=\"Live Demo\">live ne websitin tone</a>. "
+"Me shume informacione mbi kete plugin mund ta gjeni ne <a href=\"https://"
+"wordpress.org/plugins/wcp-openweather/\" target=\"_blank\" title=\"wordpress."
+"org\">faqen e tij</a>, me ne detaje ne <a href=\"https://wordpress.org/"
+"plugins/wcp-openweather/faq/\" target=\"_blank\" title=\"FAQ\">PEP</a> dhe "
+"sektorin e <a href=\"https://wordpress.org/plugins/wcp-openweather/"
+"screenshots/\" target=\"_blank\" title=\"Screenshots\">fotove prezantuese</"
+"a>. Ju mund ta shikoni kete plugin <a href=\"http://wpdemo.webcodin.com/"
+"weather-forecast/\" target=\"_blank\" title=\"Live Demo\">live ne websitin "
+"tone</a>. "
 
 #: templates/admin/options/layout.php:41
 msgid "Save Changes"
@@ -471,6 +458,24 @@ msgstr "Shtoni nje kod te ri te shkurtur per WCP OpenWeather"
 #: templates/admin/constructor/layout.php:21
 msgid "Add"
 msgstr "Shtojeni"
+
+#~ msgid "English (United States)"
+#~ msgstr "Anglisht (SHBA)"
+
+#~ msgid "Russian (Russia)"
+#~ msgstr "Rusisht (Rusi)"
+
+#~ msgid "Ukrainian (Ukraine)"
+#~ msgstr "Ukrainisht (Ukrainë)"
+
+#~ msgid "Albanian (Albania)"
+#~ msgstr "Shqiptar (Shqipëri)"
+
+#~ msgid "French (France)"
+#~ msgstr "Frëngjisht (Francë)"
+
+#~ msgid "German (Germany)"
+#~ msgstr "Gjermanisht (Gjermani)"
 
 #~ msgid "Partial translation"
 #~ msgstr "Përkthimi i pjesshëm"
