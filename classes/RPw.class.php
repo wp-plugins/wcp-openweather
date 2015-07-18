@@ -425,7 +425,7 @@ class RPw extends Agp_Module {
     public function getDate($format = '', $date = NULL) {
         $locale = get_locale();
         if (!isset($date)) {
-            $date = time();
+            $date = time() + ( get_option( 'gmt_offset' ) * HOUR_IN_SECONDS );
         }
         
         setlocale(LC_TIME, "{$this->getPluginLocale()}.UTF-8");
@@ -433,6 +433,7 @@ class RPw extends Agp_Module {
         setlocale(LC_TIME, $locale);
         
         return $result;
+        
     }
     
     public function getLanguages () {

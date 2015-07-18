@@ -176,6 +176,9 @@ More information can be found in the section [screenshots](https://wordpress.org
 12. Admin Panel :: Theme Settings
 
 == Changelog ==
+= 1.1.8 =
+* Fixed issue with the difference between current date of the plugin and current date of the website based on a "Timezone" parameter of the Wordpress
+
 = 1.1.7 =
 * Added translation to the Dutch (Belgium) language
 
@@ -183,7 +186,7 @@ More information can be found in the section [screenshots](https://wordpress.org
 * Added translations to the Albanian and French languages
 
 = 1.1.5 =
-* Fixed the issue with the error "mysqli::mysqli(): (HY000/2005): Unknown MySQL server host"
+* Fixed issue with the error "mysqli::mysqli(): (HY000/2005): Unknown MySQL server host"
 
 = 1.1.4 =
 * Changed: Removed "uniqueId" parameter from the shortcodes generator result
