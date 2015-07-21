@@ -2,15 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wcp-openweather-theme\n"
 "POT-Creation-Date: 2015-07-17 15:44+0300\n"
-"PO-Revision-Date: 2015-07-17 16:08+0300\n"
+"PO-Revision-Date: 2015-07-20 16:31+0300\n"
 "Last-Translator: - <->\n"
 "Language-Team: Webcodin <info@webcodin.com>\n"
 "Language: sq_AL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n:1,2;_x:1,2c;_ex:1,2c\n"
+"X-Generator: Poedit 1.8.2\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n:1,2;_x:1,2c;"
+"_ex:1,2c\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -18,15 +19,15 @@ msgstr ""
 
 #: classes/RPw_Theme.class.php:40
 msgid "Default Theme"
-msgstr "Lekura kryesore"
+msgstr "Lëkura kryesore"
 
 #: classes/widget/RPw_Weather.class.php:14
 msgid "Adds weather to sidebar"
-msgstr "Shtoni motin ne kornizen anesore"
+msgstr "Shtoni motin në kornizën anësore"
 
 #: classes/widget/RPw_Weather.class.php:15
 msgid "WCP Weather"
-msgstr ""
+msgstr "WCP Weather"
 
 #: classes/widget/RPw_Weather.class.php:106
 msgid "Title"
@@ -34,11 +35,11 @@ msgstr "Titulli"
 
 #: classes/widget/RPw_Weather.class.php:115
 msgid "Show current weather"
-msgstr "Tregoni parashikimin e motit te tanishem"
+msgstr "Tregoni parashikimin e motit të tanishëm"
 
 #: classes/widget/RPw_Weather.class.php:122
 msgid "Show 5 day forecast"
-msgstr "Tregoni parashikimin e motit per 5 dite"
+msgstr "Tregoni parashikimin e motit për 5 ditë"
 
 #: classes/widget/RPw_Weather.class.php:128
 msgid "City"
@@ -50,7 +51,7 @@ msgid ""
 "title=\"http://www.openweathermap.com/\" target=\"_blank\">www."
 "openweathermap.com</a>."
 msgstr ""
-"Ju mund ta gjeni qyetetin tuaj ne  <a href=\"http://www.openweathermap.com/"
+"Ju mund ta gjeni qytetin tuaj në  <a href=\"http://www.openweathermap.com/"
 "\" title=\"http://www.openweathermap.com/\" target=\"_blank\">www."
 "openweathermap.com</a>."
 
@@ -60,7 +61,7 @@ msgstr "Temperatura"
 
 #: classes/widget/RPw_Weather.class.php:165
 msgid "Wind Speed"
-msgstr "Shpejtesia e eres"
+msgstr "Shpejtësia e erës"
 
 #: classes/widget/RPw_Weather.class.php:184
 #: templates/shortcode/wcp_weather/forecast.php:15
@@ -70,19 +71,19 @@ msgstr "Presioni"
 
 #: classes/widget/RPw_Weather.class.php:200
 msgid "Enable user settings"
-msgstr "Aktivizoni alternativat e perdoruesit"
+msgstr "Aktivizoni alternativat e përdoruesit"
 
 #: classes/widget/RPw_Weather.class.php:207
 msgid "Hide description of the weather conditions"
-msgstr "Fshihni pershkrimin e kushteve te motit"
+msgstr "Fshihni përshkrimin e kushteve të motit"
 
 #: classes/widget/RPw_WeatherMini.class.php:14
 msgid "Adds mini weather to sidebar"
-msgstr "Shtoni mini motin ne kornizen anesore"
+msgstr "Shtoni mini motin në kornizën anësore"
 
 #: classes/widget/RPw_WeatherMini.class.php:15
 msgid "WCP Weather Mini"
-msgstr ""
+msgstr "WCP Weather Mini"
 
 #: config/admin-options-fields.php:12
 msgid "Background Color"
@@ -96,7 +97,7 @@ msgstr "Ngjyra e tekstit"
 #: templates/widget/wcp_weather_mini_widget/nodata.php:3
 #: templates/shortcode/wcp_weather/nodata.php:3
 msgid "Ooops! Nothing was found!"
-msgstr "Upps! Nuk u gjend asnje!"
+msgstr "Upps! Nuk u gjend asnjë!"
 
 #: templates/widget/wcp_weather_mini_widget/forecast.php:10
 #: templates/shortcode/wcp_weather/forecast.php:10
@@ -121,7 +122,7 @@ msgstr "Era"
 #: templates/shortcode/wcp_weather/forecast.php:14
 #: templates/shortcode/wcp_weather/now.php:32
 msgid "Humidity"
-msgstr "Lageshtia"
+msgstr "Lagështia"
 
 #: templates/shortcode/wcp_weather/forecast.php:15
 msgid "Pres."
@@ -132,13 +133,13 @@ msgid ""
 "You can change current theme <a href=\"/wp-admin/admin.php?page=wcp-"
 "weather&tab=plugin-settings\">here</a>."
 msgstr ""
-"Ju mund ta ndryshoni lekuren e tanishme <a href=\"/wp-admin/admin.php?"
-"page=wcp-weather&tab=plugin-settings\">ketu</a>."
+"Ju mund ta ndryshoni lëkurën e tanishme <a href=\"/wp-admin/admin.php?"
+"page=wcp-weather&tab=plugin-settings\">këtu</a>."
 
 #: templates/admin/options/layout.php:29
 msgid "Save Changes"
-msgstr ""
+msgstr "Ruajini ndryshimet"
 
 #: templates/admin/options/layout.php:30
 msgid "Reset to Default"
-msgstr ""
+msgstr "Rikthejeni në gjëndjen fillestare"

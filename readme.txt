@@ -1,6 +1,6 @@
 === WCP OpenWeather ===
 Contributors: webcodin
-Tags:  forecast, forecast widget, local weather, OpenWeatherMap, shortcode, sidebar, weather, weather forecasts, weather widget, widgets, options, user options, plugin skin, plugin theme, Weather API
+Tags:  forecast, forecast widget, local weather, openweathervap, shortcode, sidebar, weather, weather forecasts, weather widget, widgets, options, user options, plugin skin, plugin theme, Weather API, conditions, current conditions, weather by city, city name, google autocomplete, autocomplete, location, units, temperature, wind speed, pressure, multilanguage, multi language, language
 Requires at least: 3.5.0
 Tested up to: 4.2
 License: GPLv2 or later
@@ -11,8 +11,10 @@ The weather forecast plugin based on OpenWeatherMap API that includes various si
 
 == Description ==
 
-WCP OpenWeather plugin allows you to add various widgets and shortcodes with current weather or forecast for your city. 
+WCP OpenWeather plugin allows you to add various widgets and shortcodes with current weather or forecast for your city.   
+
 Our plugin is based on free [OpenWeatherMap API](http://openweathermap.org/) and uses free API key for weather data receiving with limitation for this plan, but you can buy any key for [paid plans](http://openweathermap.org/price/) and use it for your purposes.
+
 In additional, plugin supports different themes, but currently is available only one default theme. We are working on creation of new themes for widgets/shortcodes, so it will be added soon. With default theme you are able to customize background/text colors for widgets/shortcodes.
 
 Live demo you can find [here](http://wpdemo.webcodin.com/weather-forecast/).
@@ -42,20 +44,22 @@ Live demo you can find [here](http://wpdemo.webcodin.com/weather-forecast/).
 
 = Multilanguage Functionality =
 
-Currently, we are working on the plugin multilanguage functionality. In this plugin realize we added support for following list of the languages:
+First of all, we want to say **great thanks** for all people who help us with plugin translation!
 
-* English (default);
-* Russian;
-* Ukrainian;
-* Albanian;
-* French;
-* Dutch (Belgium).
+Available Languages:
+
+* English (United States) – default;
+* Russian (Russia);
+* Ukrainian (Ukraine);
+* Albanian (Albania) – great thanks for Erjon;
+* Dutch (Belgium) – great thanks for Christophe​;
+* French (France) – demo mode.
+ 
+If you want to help with plugin translation on your language please let us know via demo site [contact form](http://wpdemo.webcodin.com/stay-in-touch/) or directly via support@webcodin.com. We will send you .xlsx or .po files with necessary variables for translations.
 
 Multilanguage functionality has limitation based on [OpenWeatherMap API](http://openweathermap.org/forecast16#multi) languages support, i.e. city name has no translation for city name by default and description of weather conditions have translation only for languages form [OpenWeatherMap](http://openweathermap.org/forecast16#multi) API list.
 
 Currently, translation of the city names realized via Google autocomplete for city name based on active language for the plugin. 
-
-If you want to help with plugin translation on your language please let us know via demo site [contact form](http://wpdemo.webcodin.com/stay-in-touch/) or directly via support@webcodin.com. We will send you .xlsx or .po file with necessary variables for translations.
 
 **NB!** Translation of the city name to the active language occurs when you choose city from the Google Autocomplete list. When You change the current language then city name in the existing shortcodes and widgets will not be automatically translated to the new language. To do this, select the city again, and save the changes.
 
@@ -176,6 +180,9 @@ More information can be found in the section [screenshots](https://wordpress.org
 12. Admin Panel :: Theme Settings
 
 == Changelog ==
+= 1.1.9 =
+* Corrections for Albanian language
+
 = 1.1.8 =
 * Fixed issue with the difference between current date of the plugin and current date of the website based on a "Timezone" parameter of the Wordpress
 

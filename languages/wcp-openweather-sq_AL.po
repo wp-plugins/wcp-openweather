@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wcp-openweather\n"
 "POT-Creation-Date: 2015-07-17 15:43+0300\n"
-"PO-Revision-Date: 2015-07-17 16:07+0300\n"
+"PO-Revision-Date: 2015-07-21 17:03+0300\n"
 "Last-Translator: - <->\n"
 "Language-Team: Webcodin <info@webcodin.com>\n"
 "Language: sq_AL\n"
@@ -25,7 +25,7 @@ msgstr "Zbulim automatik"
 
 #: classes/RPw.class.php:148
 msgid "Add new WCP OpenWeather shortcode"
-msgstr "Shtoni nje kod te ri te shkurtur per WCP OpenWeather"
+msgstr "Shtoni një kod të ri të shkurtur për WCP OpenWeather"
 
 #: classes/persistence/RPw_Convertor.class.php:103
 #: classes/persistence/RPw_Convertor.class.php:119
@@ -94,11 +94,11 @@ msgstr "NNW"
 
 #: classes/theme/RPw_ThemeEntity.class.php:40
 msgid "Theme Settings"
-msgstr "Vecorite e lekures"
+msgstr "Veçoritë e lëkurës"
 
 #: classes/theme/RPw_ThemeSettings.class.php:112
 msgid "Settings reset to default values"
-msgstr "Vecorite per te rikthim ne gjendjen fillestare"
+msgstr "Veçoritë për rikthim në gjëndjen fillestare"
 
 #: config/admin-options-fields.php:6
 msgid "Location"
@@ -106,7 +106,7 @@ msgstr "Lokalizimi"
 
 #: config/admin-options-fields.php:9
 msgid "Units"
-msgstr "Njesite"
+msgstr "Njësitë"
 
 #: config/admin-options-fields.php:13
 msgid "Display Options"
@@ -123,7 +123,7 @@ msgid ""
 "title=\"http://www.openweathermap.com/\" target=\"_blank\">www."
 "openweathermap.com</a>."
 msgstr ""
-"Ju mund ta gjeni qyetetin tuaj ne <a href=\"http://www.openweathermap.com/\" "
+"Ju mund ta gjeni qytetin tuaj në <a href=\"http://www.openweathermap.com/\" "
 "title=\"http://www.openweathermap.com/\" target=\"_blank\">www."
 "openweathermap.com</a>."
 
@@ -133,7 +133,7 @@ msgstr "Temperatura"
 
 #: config/admin-options-fields.php:53
 msgid "Wind Speed"
-msgstr "Shpejtesia e eres"
+msgstr "Shpejtësia e erës"
 
 #: config/admin-options-fields.php:61
 msgid "Pressure"
@@ -141,23 +141,23 @@ msgstr "Presioni"
 
 #: config/admin-options-fields.php:69
 msgid "Show current weather"
-msgstr "Tregoni parashikimin e motit te tanishem"
+msgstr "Tregoni parashikimin e motit të tanishëm"
 
 #: config/admin-options-fields.php:76
 msgid "Show 5 day forecast"
-msgstr "Tregoni parashikimin e motit per 5 dite"
+msgstr "Tregoni parashikimin e motit për 5 ditë"
 
 #: config/admin-options-fields.php:86
 msgid "General"
-msgstr "Te Pergjithshme"
+msgstr "Të Përgjithshme"
 
 #: config/admin-options-fields.php:89
 msgid "User Options"
-msgstr "Alternativa Perdoruesi"
+msgstr "Alternativa Përdoruesi"
 
 #: config/admin-options-fields.php:92
 msgid "Other"
-msgstr "Te tjera"
+msgstr "Të tjera"
 
 #: config/admin-options-fields.php:98
 msgid "Language"
@@ -165,7 +165,7 @@ msgstr "Gjuha"
 
 #: config/admin-options-fields.php:107
 msgid "Current Theme"
-msgstr "Lekura aktuale"
+msgstr "Lëkura aktuale"
 
 #: config/admin-options-fields.php:116
 msgid "Refresh Time"
@@ -173,23 +173,23 @@ msgstr "Koha rifreskuese"
 
 #: config/admin-options-fields.php:123
 msgid "Hide Description of the Weather Conditions"
-msgstr "Fshihni pershkrimin e kushteve te motit"
+msgstr "Fshihni përshkrimin e kushteve të motit"
 
 #: config/admin-options-fields.php:130
 msgid "\"No Data\" Message"
-msgstr "Mesazhi \"Asnje e dhene\""
+msgstr "Mesazhi \"Asnjë e dhënë\""
 
 #: config/admin-options-fields.php:138
 msgid "Enable User Options"
-msgstr "Aktivizoni alternativat e perdoruesit"
+msgstr "Aktivizoni alternativat e përdoruesit"
 
 #: config/admin-options-fields.php:145
 msgid "Expire User Options (days)"
-msgstr "Skadimi i alternativave te perdoruesit (dite)"
+msgstr "Skadimi i alternativave të përdoruesit (ditë)"
 
 #: config/admin-options-fields.php:160
 msgid "API key"
-msgstr "Celesi API"
+msgstr "Çelësi API"
 
 # How to get API key you can see here.
 #: config/admin-options-fields.php:164
@@ -198,8 +198,8 @@ msgid ""
 "title=\"http://openweathermap.org/appid\" target=\"_blank\">here</a>."
 msgstr ""
 "<a href=\"http://openweathermap.org/appid\" title=\"http://openweathermap."
-"org/appid\" target=\"_blank\">Ketu</a> mund te mesoni sesi te perdorni "
-"celesin API"
+"org/appid\" target=\"_blank\">Këtu</a> mund të mësoni sesi të përdorni "
+"çelësin API"
 
 #: config/admin-options-tabs.php:4
 msgid "Weather"
@@ -219,7 +219,7 @@ msgstr "WCP Weather"
 
 #: config/admin-menu.php:14 config/admin-menu.php:15
 msgid "Settings"
-msgstr "Vecorite"
+msgstr "Veçoritë"
 
 #: config/admin-options-fieldset.php:4
 msgid "&deg;C"
@@ -299,43 +299,43 @@ msgstr "torr"
 
 #: config/admin-options-fieldset.php:29
 msgid "Always"
-msgstr "Gjithmone"
+msgstr "Gjithmonë"
 
 #: config/admin-options-fieldset.php:30
 msgid "0.5h - Not Recommended"
-msgstr "0.5 ore - E pakeshillueshme"
+msgstr "0.5 orë - E pakëshillueshme"
 
 #: config/admin-options-fieldset.php:31
 msgid "1h - Recommended"
-msgstr "1 ore - E keshillueshme"
+msgstr "1 orë - E këshillueshme"
 
 #: config/admin-options-fieldset.php:32
 msgid "2h"
-msgstr "2 ore"
+msgstr "2 orë"
 
 #: config/admin-options-fieldset.php:33
 msgid "3h"
-msgstr "3 ore"
+msgstr "3 orë"
 
 #: config/admin-options-fieldset.php:34
 msgid "6h"
-msgstr "6 ore"
+msgstr "6 orë"
 
 #: config/admin-options-fieldset.php:35
 msgid "9h"
-msgstr "9 ore"
+msgstr "9 orë"
 
 #: config/admin-options-fieldset.php:36
 msgid "12h"
-msgstr "12 ore"
+msgstr "12 orë"
 
 #: config/admin-options-fieldset.php:37
 msgid "24h"
-msgstr "24 ore"
+msgstr "24 orë"
 
 #: config/admin-options-fieldset.php:55
 msgid "mon"
-msgstr "hen"
+msgstr "hën"
 
 #: config/admin-options-fieldset.php:56
 msgid "tue"
@@ -343,7 +343,7 @@ msgstr "mar"
 
 #: config/admin-options-fieldset.php:57
 msgid "wed"
-msgstr "mer"
+msgstr "mër"
 
 #: config/admin-options-fieldset.php:58
 msgid "thu"
@@ -359,7 +359,7 @@ msgstr "sht"
 
 #: config/admin-options-fieldset.php:61
 msgid "sun"
-msgstr "dje"
+msgstr "die"
 
 #: config/admin-options-fieldset.php:64
 msgid "jan"
@@ -403,7 +403,7 @@ msgstr "tet"
 
 #: config/admin-options-fieldset.php:74
 msgid "nov"
-msgstr "nen"
+msgstr "nën"
 
 #: config/admin-options-fieldset.php:75
 msgid "dec"
@@ -411,7 +411,7 @@ msgstr "dhj"
 
 #: templates/user/options/layout.php:10
 msgid "Options"
-msgstr "Vecorite"
+msgstr "Veçoritë"
 
 #: templates/user/options/layout.php:18
 msgid "Save & Refresh"
@@ -419,7 +419,7 @@ msgstr "Ruajeni dhe rifreskojeni"
 
 #: templates/user/options/layout.php:19 templates/admin/options/layout.php:42
 msgid "Reset to Default"
-msgstr "Rikthejeni ne gjendjen fillestare"
+msgstr "Rikthejeni në gjëndjen fillestare"
 
 # More information about the plugin you can find on the plugin page in the FAQ and Screenshots sections. Live demo you can find on our site.
 #: templates/admin/options/layout.php:20
@@ -433,15 +433,15 @@ msgid ""
 "demo</strong> you can find on <a href=\"http://wpdemo.webcodin.com/weather-"
 "forecast/\" target=\"_blank\" title=\"Live Demo\">our site</a>."
 msgstr ""
-"Me shume informacione mbi kete plugin mund ta gjeni ne <a href=\"https://"
+"Më shumë informacione mbi këtë plugin mund ta gjeni në <a href=\"https://"
 "wordpress.org/plugins/wcp-openweather/\" target=\"_blank\" title=\"wordpress."
-"org\">faqen e tij</a>, me ne detaje ne <a href=\"https://wordpress.org/"
+"org\">faqen e tij</a>, më në detaje në <a href=\"https://wordpress.org/"
 "plugins/wcp-openweather/faq/\" target=\"_blank\" title=\"FAQ\">PEP</a> dhe "
 "sektorin e <a href=\"https://wordpress.org/plugins/wcp-openweather/"
 "screenshots/\" target=\"_blank\" title=\"Screenshots\">fotove prezantuese</"
-"a>. Ju mund ta shikoni kete plugin <a href=\"http://wpdemo.webcodin.com/"
-"weather-forecast/\" target=\"_blank\" title=\"Live Demo\">live ne websitin "
-"tone</a>. "
+"a>. Ju mund ta shikoni këtë plugin <a href=\"http://wpdemo.webcodin.com/"
+"weather-forecast/\" target=\"_blank\" title=\"Live Demo\">live në websitin "
+"tonë</a>. "
 
 #: templates/admin/options/layout.php:41
 msgid "Save Changes"
@@ -449,11 +449,11 @@ msgstr "Ruajini ndryshimet"
 
 #: templates/admin/options/fields/lang.php:44
 msgid "Not supported in the current theme"
-msgstr "Nuk suportohet ne lekuren aktuale"
+msgstr "Nuk suportohet në lëkurën aktuale"
 
 #: templates/admin/constructor/layout.php:10
 msgid "WCP OpenWeather Shortcode"
-msgstr "Shtoni nje kod te ri te shkurtur per WCP OpenWeather"
+msgstr "WPC OpenWeather kode të shkurtuara"
 
 #: templates/admin/constructor/layout.php:21
 msgid "Add"
