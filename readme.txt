@@ -5,7 +5,7 @@ Requires at least: 3.5.0
 Tested up to: 4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: trunk
+Stable tag: 1.1.9
 
 The weather forecast plugin based on OpenWeatherMap API that includes various sidebar widgets and shortcodes
 
@@ -37,10 +37,10 @@ Live demo you can find [here](http://wpdemo.webcodin.com/weather-forecast/).
 
 = Default Theme Features =
 
-* 2 widgets with options (normal and mini) for various sidebar sizes;
-* Shortcode with parameters for pages;
+* Widget with 2 templates: default & compact;
+* Mini Widget;
+* Shortcode with 2 templates: default & compact;
 * Customization of background and text colors;
-
 
 = Multilanguage Functionality =
 
@@ -53,7 +53,8 @@ Available Languages:
 * Ukrainian (Ukraine);
 * Albanian (Albania) – great thanks for Erjon;
 * Dutch (Belgium) – great thanks for Christophe​;
-* French (France) – demo mode.
+* Serbian (Serbia) - great thanks for Nikola;
+* French (France).
  
 If you want to help with plugin translation on your language please let us know via demo site [contact form](http://wpdemo.webcodin.com/stay-in-touch/) or directly via support@webcodin.com. We will send you .xlsx or .po files with necessary variables for translations.
 
@@ -180,6 +181,13 @@ More information can be found in the section [screenshots](https://wordpress.org
 12. Admin Panel :: Theme Settings
 
 == Changelog ==
+= 1.2.0 =
+* Added translation to the Serbian (Serbia) language
+* Added ability to use different templates in the weather widgets and shortcodes
+* Added new "Compact" templates for the weather widgets and shortcodes
+* Added ability to use "clouds" parameter in the templates
+* Changed rule of displaying humidity value. At now "0%" value is displaying as "-"
+
 = 1.1.9 =
 * Corrections for Albanian language
 

@@ -1,1 +1,0 @@
-Collection of a base classes for a custom WordPress plugins
