@@ -332,6 +332,10 @@ class RPw extends Agp_Module {
         $atts['enableUserSettings'] = $enableUserSettings;        
         $atts['hideWeatherConditions'] = $hideWeatherConditions;        
         
+        if (empty($atts['template'])) {
+            $atts['template'] = 'default';
+        }
+        
         $this->settings->getUserOptions()->set($id, $atts);                        
             
         return $atts;

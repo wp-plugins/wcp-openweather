@@ -181,6 +181,9 @@ More information can be found in the section [screenshots](https://wordpress.org
 12. Admin Panel :: Theme Settings
 
 == Changelog ==
+= 1.2.1 =
+* Minor bugfixing
+
 = 1.2.0 =
 * Added translation to the Serbian (Serbia) language
 * Added ability to use different templates in the weather widgets and shortcodes
