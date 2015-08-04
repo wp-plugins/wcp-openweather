@@ -46,6 +46,7 @@ return array(
         'fr_FR' => 'Français (France)',
         'nl_BE' => 'Nederlands (België)',
         'sr_RS' => 'Српски језик (Србија)',
+        'lt_LT' => 'Lietuvių kalba (Lietuva)',
         //'de_DE' => 'Deutsch (Deutschland)',
     ),
     'partial_languages' => array(

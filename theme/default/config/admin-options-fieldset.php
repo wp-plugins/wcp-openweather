@@ -8,6 +8,7 @@ return array(
         'fr_FR' => 'Français (France)',
         'nl_BE' => 'Nederlands (België)',        
         'sr_RS' => 'Српски језик (Србија)',
+        'lt_LT' => 'Lietuvių kalba (Lietuva)',
     ),   
     'wcp_weather_widget_templates' => array(
         'default' => 'Default',

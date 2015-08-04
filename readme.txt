@@ -54,6 +54,7 @@ Available Languages:
 * Albanian (Albania) – great thanks for Erjon;
 * Dutch (Belgium) – great thanks for Christophe​;
 * Serbian (Serbia) - great thanks for Nikola;
+* Lithuanian (Lithuania) - great thanks for Mantas; 
 * French (France).
  
 If you want to help with plugin translation on your language please let us know via demo site [contact form](http://wpdemo.webcodin.com/stay-in-touch/) or directly via support@webcodin.com. We will send you .xlsx or .po files with necessary variables for translations.
@@ -180,9 +181,13 @@ More information can be found in the section [screenshots](https://wordpress.org
 11. Admin Panel :: Settings :: API Tab
 12. Admin Panel :: Theme Settings
 
-== Changelog ==
+== Changelog == 
+
+= 1.2.2 =
+* Added translation to the Lithuanian (Lithuania) language
+
 = 1.2.1 =
-* Minor bugfixing
+* Minor bugfixing     
 
 = 1.2.0 =
 * Added translation to the Serbian (Serbia) language
