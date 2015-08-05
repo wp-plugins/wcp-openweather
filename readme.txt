@@ -5,7 +5,7 @@ Requires at least: 3.5.0
 Tested up to: 4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: 1.2.2
+Stable tag: trunk
 
 The weather forecast plugin based on OpenWeatherMap API that includes various sidebar widgets and shortcodes
 
@@ -182,6 +182,9 @@ More information can be found in the section [screenshots](https://wordpress.org
 12. Admin Panel :: Theme Settings
 
 == Changelog == 
+
+= 1.2.4 =
+* Fixed trouble with incorrect commit to ugly WordPress SVN
 
 = 1.2.3 = 
 * Added filter hook 'wcp_get_settings' that allow to modify weather attributes for getting personal weather conditions
