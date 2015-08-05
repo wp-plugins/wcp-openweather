@@ -233,15 +233,15 @@ class RPw extends Agp_Module {
                 exit();
             }
 
-            if ( !empty($_POST['action']) && $_POST['action'] = 'setUserOptions' 
-                && !empty($_POST['id']) && !empty($_POST['global-settings']) ) {
-                $data = $_POST['global-settings'];
-                $data['id'] = $_POST['id'];
-                
-                $data = $this->settings->sanitizeSettings($data, FALSE);
-                $this->settings->getUserOptions()->set($data['id'], $data);
-                $this->api->getSession()->reset($data['id']);
-            }            
+//            if ( !empty($_POST['action']) && $_POST['action'] = 'setUserOptions' 
+//                && !empty($_POST['id']) && !empty($_POST['global-settings']) ) {
+//                $data = $_POST['global-settings'];
+//                $data['id'] = $_POST['id'];
+//                
+//                $data = $this->settings->sanitizeSettings($data, FALSE);
+//                $this->settings->getUserOptions()->set($data['id'], $data);
+//                $this->api->getSession()->reset($data['id']);
+//            }            
         }
     }
     
@@ -335,6 +335,8 @@ class RPw extends Agp_Module {
         if (empty($atts['template'])) {
             $atts['template'] = 'default';
         }
+        
+        $atts = apply_filters( 'wcp_get_settings', $atts, $id );
         
         $this->settings->getUserOptions()->set($id, $atts);                        
             

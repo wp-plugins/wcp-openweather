@@ -1,5 +1,5 @@
 <?php
-use Webcodin\WCPOpenWeather\Core\Agp_MySqlDb;
+use Webcodin\WCPOpenWeather\Core\Agp_Session;
 
 class RPw_UserOptions {
     
@@ -56,10 +56,19 @@ class RPw_UserOptions {
     private $expire;
     
     /**
+     * Session
+     * 
+     * @var Agp_Session
+     */
+    private $session;
+    
+    /**
      * Constructor
      */
     public function __construct() {
         global $wpdb;
+        
+        $this->session = Agp_Session::instance();
         
         $this->tableName = $wpdb->prefix . "wcp_useroptions";
             
@@ -74,7 +83,9 @@ class RPw_UserOptions {
         if (empty($this->id)) {
             $this->id = $this->_getUniqueID();
         }
-        setcookie($modKey , $this->id, time() + $this->expire, '/');                    
+        
+        $exp = (!empty($this->expire)) ? time() + $this->expire : 0;
+        setcookie($modKey , $this->id, $exp, '/');                    
         $_COOKIE[$modKey] = $this->id;   
         
         $this->_gcDbCookie();
@@ -91,9 +102,14 @@ class RPw_UserOptions {
         $data = base64_encode(serialize($value));
         $access = time();
         
-        $sql = "REPLACE INTO {$this->tableName} VALUES ('$id', '$key', '$data', '$access')";
+        if (empty($this->expire)) {
+            $this->session->set($key, $data);
+        } else {
+            $sql = "REPLACE INTO {$this->tableName} VALUES ('$id', '$key', '$data', '$access')";
+            $wpdb->query($sql);            
+        }
         
-        $wpdb->query($sql);
+
     }
     
     private function _getDbCookie ($key) {
@@ -101,8 +117,12 @@ class RPw_UserOptions {
         $id = $this->id;
         $key = $this->_normalizeKey($key);
         
-        $sql = "SELECT data FROM {$this->tableName} WHERE `id` = '{$id}' AND `key` = '$key'";
-        $result = $wpdb->get_row($sql, ARRAY_A);
+        if (empty($this->expire)) {
+            $result['data'] = $this->session->get($key);
+        } else {
+            $sql = "SELECT data FROM {$this->tableName} WHERE `id` = '{$id}' AND `key` = '$key'";
+            $result = $wpdb->get_row($sql, ARRAY_A);            
+        }
         
         if (!empty($result['data'])) {
             $data = $result['data'];
@@ -119,9 +139,12 @@ class RPw_UserOptions {
         $id = $this->id;
         $key = $this->_normalizeKey($key);
         
-        $sql = "DELETE FROM {$this->tableName} WHERE `id` = '{$id}' AND `key` = '$key'";
-
-        $wpdb->query($sql);     
+        if (empty($this->expire)) {
+            $this->session->reset($key);
+        } else {
+            $sql = "DELETE FROM {$this->tableName} WHERE `id` = '{$id}' AND `key` = '$key'";
+            $wpdb->query($sql);                 
+        }
     }        
 
 
@@ -138,6 +161,9 @@ class RPw_UserOptions {
     private function _normalizeKey ( $key ) {
         if (empty($key)) {
             return '';
+        }
+        if (empty($this->expire)) {
+            $key = 'data_' . $key;
         }
         return rawurlencode($key);    
     }
@@ -178,5 +204,7 @@ class RPw_UserOptions {
         return $this->id;
     }
 
-
+    public function getSession() {
+        return $this->session;
+    }
 }

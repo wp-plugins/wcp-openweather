@@ -95,5 +95,22 @@ class RPw_Ajax extends Agp_AjaxAbstract {
         }
         
         return $result;                    
-    }            
+    }  
+    
+    public function setUserOptions ($data) {
+        $result = array();
+        if (!empty($data['id']) && !empty($data['global-settings'])) {
+            $atts = !empty($data['global-settings']) ? $data['global-settings'] : array();            
+            if (!empty($atts)) {
+                $atts['id'] = $data['id'];
+                
+                $atts = RPw()->getSettings()->sanitizeSettings($atts, FALSE);
+                RPw()->getSettings()->getUserOptions()->set($atts['id'], $atts);
+                RPw()->getApi()->getSession()->reset($atts['id']);
+                $result['status'] = 'ok';
+            }            
+        }
+        
+        return $result;
+    }
 }

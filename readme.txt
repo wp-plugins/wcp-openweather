@@ -183,6 +183,12 @@ More information can be found in the section [screenshots](https://wordpress.org
 
 == Changelog == 
 
+= 1.2.3 = 
+* Added filter hook 'wcp_get_settings' that allow to modify weather attributes for getting personal weather conditions
+* Added AJAX user options submit functionality
+* Code optimization
+* Minor changes
+
 = 1.2.2 =
 * Added translation to the Lithuanian (Lithuania) language
 

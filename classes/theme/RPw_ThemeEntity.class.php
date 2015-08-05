@@ -54,7 +54,7 @@ class RPw_ThemeEntity extends Agp_Module {
         }
     }        
     
-    public function doShortcode ($atts, $content, $tag, $template = NULL) {
+    private function _prepareAtts ($atts, $tag, $template) {
         $plugin = RPw()->getSettings()->getPluginSettings();
 
         $timeDiff = !empty($plugin['refreshPeriod']) ? 1 * $plugin['refreshPeriod'] : 0 ;
@@ -63,69 +63,43 @@ class RPw_ThemeEntity extends Agp_Module {
         $id = !empty($atts['id']) ? $atts['id'] : 'default-weather-id';
         $id = stripslashes(str_replace(' ','_', str_replace(', ', '_', $id)));
         $id = preg_replace("/&([a-z])[a-z]+;/i", "$1", htmlentities($id));
-        
         if (isset($atts['id'])) {
             unset($atts['id']);
         }
+
+        $tag = !empty($atts['tag']) ? $atts['tag'] : $tag;    
+        $atts['tag'] = $tag;
+        
+        $template = !empty($atts['template']) ? $atts['template'] : $template;    
+        $templateList = RPw()->getCurrentTheme()->getSettings()->getFieldSet("{$tag}_templates");
+        $isSingleTemplate = !empty($templateList) && is_array($templateList) && count($templateList) == 1 || empty($template);
+        if ($isSingleTemplate) {
+            $template = 'default';
+        }
+        $atts['template'] = $template;
+        $atts['themeOptions'] = $this->getSettings()->getSettings($this->settingsKey);
         
         RPw()->getSettings()->setCurrentId($id);        
         RPw()->getSettings()->setCurrentTag($tag);     
-        
-        $atts = RPw()->getSettingsById($id, $atts);        
-
-        if (!empty($atts['template'])) {
-            $template = $atts['template'];    
-        }
-        $templateList = RPw()->getCurrentTheme()->getSettings()->getFieldSet("{$tag}_templates");
-        $isSingleTemplate = !empty($templateList) && is_array($templateList) && count($templateList) == 1;
-        if ($isSingleTemplate) {
-            $template = 'default';
-        }
-        
         RPw()->getSettings()->setCurrentTemplate($template);        
         
-        $atts['themeOptions'] = $this->getSettings()->getSettings($this->settingsKey);
+        $atts = RPw()->getSettingsById($id, $atts);    
+        
         $atts['tag'] = $tag;
         $atts['template'] = $template;
+        $atts['themeOptions'] = $this->getSettings()->getSettings($this->settingsKey);        
         
-        return $this->getTemplate("shortcode/{$tag}/{$template}/layout", $atts);        
+        return $atts;
+    }
+    
+    public function doShortcode ($atts, $content, $tag = 'wcp_weather', $template = NULL) {
+        $atts = $this->_prepareAtts($atts, $tag, $template);
+        return $this->getTemplate("shortcode/{$atts['tag']}/{$atts['template']}/layout", $atts);        
     }
     
     public function doWidget ($atts, $tag, $template = NULL) {
-        $plugin = RPw()->getSettings()->getPluginSettings();
-
-        $timeDiff = !empty($plugin['refreshPeriod']) ? 1 * $plugin['refreshPeriod'] : 0 ;
-        RPw()->getApi()->setTimeDiff($timeDiff);
-        
-        $id = !empty($atts['id']) ? $atts['id'] : 'default-weather-id';
-        $id = stripslashes(str_replace(' ','_', str_replace(',', '_', $id)));
-        $id = preg_replace("/&([a-z])[a-z]+;/i", "$1", htmlentities($id));
-
-        if (isset($atts['id'])) {
-            unset($atts['id']);
-        }
-        
-        RPw()->getSettings()->setCurrentId($id);   
-        RPw()->getSettings()->setCurrentTag($tag);      
-        
-        $atts = RPw()->getSettingsById($id, $atts);        
-
-        if (!empty($atts['template'])) {
-            $template = $atts['template'];    
-        }
-        $templateList = RPw()->getCurrentTheme()->getSettings()->getFieldSet("{$tag}_templates");
-        $isSingleTemplate = !empty($templateList) && is_array($templateList) && count($templateList) == 1;
-        if ($isSingleTemplate) {
-            $template = 'default';
-        }
-        
-        RPw()->getSettings()->setCurrentTemplate($template);        
-        
-        $atts['themeOptions'] = $this->getSettings()->getSettings($this->settingsKey);
-        $atts['tag'] = $tag;
-        $atts['template'] = $template;
-        
-        return $this->getTemplate("widget/{$tag}/{$template}/layout", $atts);
+        $atts = $this->_prepareAtts($atts, $tag, $template);        
+        return $this->getTemplate("widget/{$atts['tag']}/{$atts['template']}/layout", $atts);
     }       
     
     public function getExcludeUserOptions ($tag) {
